@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "paths": {
+      "@data/*": ["client/src/data/*"],
+      "@assets/*": ["client/src/assets/*"],
+      "@redux/*": ["client/src/components/redux/*"],
+      "@slices/*": ["client/src/components/redux/slices/*"],
+      "@selectors/*": ["client/src/components/redux/selectors/*"],
+      "@helpers/*": ["client/src/helpers/*"],
+      "@routs/*": ["client/src/routs/*"],
+      "@footers/*": ["client/src/components/footers/*"],
+      "@modals/*": ["client/src/components/modals/*"],
+      "@header/*": ["client/src/components/header/*"],
+      "@destination/*": ["client/src/components/travels/destination/*"],
+      "@custom-ui/*": ["client/src/components/custom-ui/*"]
+    }
+  },
+  "include": ["client/src", "amadeus.d.ts"],
+  "exclude": ["node_modules"]
+}

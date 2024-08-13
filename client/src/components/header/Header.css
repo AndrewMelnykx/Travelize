@@ -1,0 +1,30 @@
+.header-paper {
+  width: 95%;
+  height: 105%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+.menu-button {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .header-paper {
+    z-index: 10;
+    position: relative;
+  }
+  .header-typography {
+    font-size: 25px;
+  }
+  .menu-button {
+    display: block;
+    right: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}

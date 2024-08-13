@@ -1,0 +1,10 @@
+.top i {
+  color: white;
+}
+.bottom div {
+  display: flex;
+  flex-direction: column;
+}
+.bottom typography {
+  margin-top: 20%;
+}

@@ -1,0 +1,19 @@
+@media screen and (max-width: 850px) {
+  .dest-wrapper {
+    margin: 4rem 2rem;
+  }
+  .first-dest {
+    flex-direction: column-reverse;
+    margin-top: 2.5rem;
+  }
+  .second-dest {
+    margin-top: 2.5rem;
+    flex-direction: none;
+  }
+  .dest-images {
+    margin-bottom: 10%;
+  }
+  .dest-description {
+    width: 100%;
+  }
+}

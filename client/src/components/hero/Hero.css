@@ -1,0 +1,32 @@
+.hero-template {
+  height: 100vh;
+}
+
+.hero-about {
+  height: 70vh;
+}
+
+.disabled {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+@media screen and (max-width: 850px) {
+  .hero-title {
+    padding: 10px 20px;
+    font-size: 45px;
+  }
+  .hero-text {
+    font-size: 1.1rem;
+    padding: 0 0 2rem 0;
+  }
+  .hero-button {
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+  }
+}
+.Toastify__toast-container {
+  z-index: 9999 !important;
+}
