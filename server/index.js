@@ -8,14 +8,15 @@ import routerFlight from "./routs/flights.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 3001;
-
-const app = express();
-app.use(
- const corsOptions = {
+const corsOptions = {
   origin: 'https://travelize-frontend.onrender.com', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
+
+const app = express();
+app.use(
+cors(corsOptions))
 );
 app.get("/api", (req, res) => {
   3;
