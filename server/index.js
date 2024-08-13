@@ -11,10 +11,11 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  })
+ const corsOptions = {
+  origin: 'https://travelize-frontend.onrender.com', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+};
 );
 app.get("/api", (req, res) => {
   3;
