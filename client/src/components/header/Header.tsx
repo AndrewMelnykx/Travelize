@@ -25,19 +25,24 @@ import {
   tokenInputId,
 } from "@data/static-data/inputs-data";
 import { setCookieFromTokenInput } from "@helpers/helpers-funcs";
+import { isCloseIconSelector } from "@redux/selectors/components-selectors";
+import FilterSlice from "@redux/slices/filter-slice";
 
 const Header = () => {
-  const [isCloseIconVisible, setIsCloseIconVisible] = useState(false);
+  const closeIconVisibility = useSelector(isCloseIconSelector);
   const [inputsSignUp, setInputsSignUp] = useState(signUpInputs);
   const [inputsLogin, setInputsLogin] = useState(loginInputs);
 
-  const handleIsCloseVisibility = () => {
-    setIsCloseIconVisible(!isCloseIconVisible);
-  };
   const isScreenSmall = useMediaQuery("(max-width:850px)");
   const signUpState = useSelector(signUpModalSelector);
   const loginState = useSelector(loginModalSelector);
   const dispatch = UseStoreDispatcher();
+
+  const handleIsCloseVisibility = () => {
+    dispatch(
+      FilterSlice.actions.handleCloseIconVisibility(!closeIconVisibility)
+    );
+  };
 
   const handleCloseSignUp = () => {
     dispatch(AuthorizationSlice.actions.toggleSignUp(false));
@@ -77,7 +82,13 @@ const Header = () => {
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         }}
       >
-        <Typography variant="h3" ml={3} mt={1} className="header-typography">
+        <Typography
+          variant="h3"
+          ml={3}
+          mt={1}
+          className="header-typography"
+          fontFamily={"inherit"}
+        >
           Travelize
         </Typography>
 
@@ -88,11 +99,12 @@ const Header = () => {
               position: "absolute",
               right: "0",
             }}
+            data-testid=""
           >
-            <SvgIcon component={isCloseIconVisible ? CloseIcon : MenuIcon} />
+            <SvgIcon component={closeIconVisibility ? CloseIcon : MenuIcon} />
           </IconButton>
         ) : null}
-        <NavBar isNavBarVisible={isCloseIconVisible} />
+        <NavBar isNavBarVisible={closeIconVisibility} />
         {loginState ? (
           <CustomModal
             handleChange={handleLoginInputsChange}
@@ -121,5 +133,4 @@ const Header = () => {
     </Box>
   );
 };
-
 export { Header };

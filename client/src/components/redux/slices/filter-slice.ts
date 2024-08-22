@@ -6,6 +6,7 @@ const initialState: FilterHandlingType = {
   adultsOptionsSelect: adultsSelectOptionsData,
   departureCityInitial: "",
   arrivalCityInitial: "",
+  isCloseIconVisible: false,
 };
 
 const FilterSlice = createSlice({
@@ -20,6 +21,9 @@ const FilterSlice = createSlice({
     },
     handleArrivalCityValue: (state, action) => {
       state.arrivalCityInitial = action.payload;
+    },
+    handleCloseIconVisibility: (state, action) => {
+      state.isCloseIconVisible = action.payload;
     },
   },
 });

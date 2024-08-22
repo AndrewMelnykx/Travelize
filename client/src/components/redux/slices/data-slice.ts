@@ -6,7 +6,6 @@ import {
   fetchHotelsDataThunk,
   fetchTicketsDataThunk,
 } from "./actions-slice";
-import { toast } from "react-toastify";
 
 const initialState: DataHandlingTypes = {
   departureInputData: [],
@@ -45,7 +44,6 @@ const DataSlice = createSlice({
       })
       .addCase(fetchHotelsDataThunk.rejected, (state) => {
         state.hotelsData = [];
-        toast.error("Failed to fetch hotels");
       })
       .addCase(fetchTicketsDataThunk.fulfilled, (state, action) => {
         state.ticketsData = action.payload;

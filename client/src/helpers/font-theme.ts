@@ -2,51 +2,51 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "Permanent Marker, cursive",
+    fontFamily: "Jua, sans-serif",
     h1: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
       textTransform: "none",
     },
     h2: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
       textTransform: "none",
     },
     h3: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
       textTransform: "none",
     },
     h4: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
       textTransform: "none",
     },
     h5: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
       textTransform: "none",
     },
     h6: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
       textTransform: "none",
     },
     subtitle1: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
     },
     subtitle2: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
     },
     body1: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
     },
     body2: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
     },
     button: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
     },
     caption: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
     },
     overline: {
-      fontFamily: "Permanent Marker, cursive",
+      fontFamily: "Jua, sans-serif",
     },
   },
 });

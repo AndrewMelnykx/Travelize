@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Permanent+Marker&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #root {
@@ -14,4 +16,5 @@
 }
 body {
   z-index: -5;
+  overflow-x: hidden;
 }

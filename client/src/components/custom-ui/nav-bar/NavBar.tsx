@@ -6,6 +6,7 @@ import * as Icons from "@mui/icons-material";
 import "./NavBar.css";
 import { UseStoreDispatcher } from "@redux/store/store";
 import AuthorizationSlice from "@redux/slices/authorization-slice";
+import FilterSlice from "@redux/slices/filter-slice";
 
 interface NavBarTypes {
   isNavBarVisible: boolean;
@@ -18,14 +19,22 @@ const NavBar: React.FC<NavBarTypes> = ({ isNavBarVisible }) => {
   const handleSignUpModalVisibility = () => {
     dispatch(AuthorizationSlice.actions.toggleSignUp(true));
   };
+  const handleRouteChanging = () => {
+    dispatch(FilterSlice.actions.handleCloseIconVisibility(false));
+  };
+
   return (
-    <Box>
+    <Box data-testid="nav-bar">
       <ul className={isNavBarVisible ? "nav-menu-mobile" : "nav-menu"}>
         {MenuLinkItems.map((item, index) => {
           const IconComponent = Icons[item.icon];
           return (
             <li key={index} className={item.cName}>
-              <Link to={item.url} className="router-nav-link">
+              <Link
+                to={item.url}
+                className="router-nav-link"
+                onClick={handleRouteChanging}
+              >
                 <Box display={"flex"}>
                   {IconComponent && (
                     <SvgIcon
@@ -49,8 +58,7 @@ const NavBar: React.FC<NavBarTypes> = ({ isNavBarVisible }) => {
             backgroundColor: "whitesmoke",
             display: "flex",
             justifySelf: "flex-start",
-            marginLeft: isScreenSmall ? "-15%" : "20px",
-
+            marginLeft: isScreenSmall ? "0%" : "20px",
             "&:hover": {
               backgroundColor: "rgb(0, 255, 127)",
               color: "white",

@@ -12,6 +12,7 @@ interface FilterHandlingType {
   adultsOptionsSelect: AdultsSelectArray[];
   departureCityInitial: string;
   arrivalCityInitial: string;
+  isCloseIconVisible: boolean;
 }
 
 interface City {

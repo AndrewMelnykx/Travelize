@@ -2,16 +2,18 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "baseUrl": "./",
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+
     "paths": {
       "@data/*": ["client/src/data/*"],
       "@assets/*": ["client/src/assets/*"],
@@ -19,7 +21,7 @@
       "@slices/*": ["client/src/components/redux/slices/*"],
       "@selectors/*": ["client/src/components/redux/selectors/*"],
       "@helpers/*": ["client/src/helpers/*"],
-      "@routs/*": ["client/src/routs/*"],
+      "@routes/*": ["client/src/routes/*"],
       "@footers/*": ["client/src/components/footers/*"],
       "@modals/*": ["client/src/components/modals/*"],
       "@header/*": ["client/src/components/header/*"],
@@ -27,6 +29,6 @@
       "@custom-ui/*": ["client/src/components/custom-ui/*"]
     }
   },
-  "include": ["client/src", "amadeus.d.ts"],
+  "include": ["client/src", "amadeus.d.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]
 }

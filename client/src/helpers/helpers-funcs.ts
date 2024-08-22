@@ -5,7 +5,7 @@ const setCookieFromTokenInput = (
   inputIdFromArray: string,
   value: string
 ) => {
-  if (inputId === inputIdFromArray) {
+  if (inputId === inputIdFromArray && value) {
     Cookies.set("userToken", value, { expires: 1 });
   }
 };

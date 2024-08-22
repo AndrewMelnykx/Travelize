@@ -46,6 +46,7 @@ const Hero: React.FC<HeroProps> = ({
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
+      data-testid="hero-container"
     >
       <Box
         display="flex"
@@ -65,7 +66,11 @@ const Hero: React.FC<HeroProps> = ({
           {text}
         </Typography>
 
-        <Box mt={2} className={buttonWrapperClassName}>
+        <Box
+          mt={2}
+          className={buttonWrapperClassName}
+          data-testid="button-wrapper"
+        >
           <Button
             variant="contained"
             size="large"

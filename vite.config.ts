@@ -1,14 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import dotenv from "dotenv";
+dotenv.config();
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/",
-  build: {
-    outDir: "dist",
+  define: {
+    "process.env": process.env,
   },
+  base: "/",
   resolve: {
     alias: {
       "@data": path.resolve(__dirname, "client/src/data"),
@@ -20,7 +21,7 @@ export default defineConfig({
         "client/src/components/redux/selectors"
       ),
       "@helpers": path.resolve(__dirname, "client/src/helpers"),
-      "@routs": path.resolve(__dirname, "client/src/routs"),
+      "@routes": path.resolve(__dirname, "client/src/routes"),
       "@footers": path.resolve(__dirname, "client/src/components/footers"),
       "@modals": path.resolve(__dirname, "client/src/components/modals"),
       "@header": path.resolve(__dirname, "client/src/components/header"),

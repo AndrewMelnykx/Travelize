@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { StyledTypography } from "@helpers/custom-elements";
 import "./Footer.css";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import Cookies from "js-cookie";
 
 const FooterServices = () => {
@@ -30,7 +30,15 @@ const FooterServices = () => {
         textAlign: "center",
       }}
     >
-      <StyledTypography variant="h3" onClick={handleTicketAccess}>
+      <ToastContainer />
+      <StyledTypography
+        variant="h3"
+        onClick={handleTicketAccess}
+        style={{
+          textDecoration: "none",
+          fontFamily: "Jua, sans-serif",
+        }}
+      >
         Flights
       </StyledTypography>
       <StyledTypography variant="h3">
