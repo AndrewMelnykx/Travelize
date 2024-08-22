@@ -1,30 +1,9 @@
-# React + TypeScript + Vite
+[**Trevelize**](https://travelize-frontend.onrender.com)
+ is a modern travel planning app built with cutting-edge technologies like React, Redux Toolkit (RTK), and Material-UI (MUI). It offers a smooth and responsive user experience, enhanced by React Spring animations and Toastify notifications. The app's seamless navigation is powered by React-Router-DOM, while the backend, developed with Node.js and Express.js, ensures fast and reliable performance. Trevelize is designed to make travel planning effortless and enjoyable, providing users with an intuitive interface and real-time updates for a truly immersive experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+                                                                               Short guide
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Sign up
+2. Recieve token
+3. Write it down with password
+4. In a testing mode is safe to use my token 9569334c55mshbc698e12fef7f2cp11b752jsn3255bcf34825

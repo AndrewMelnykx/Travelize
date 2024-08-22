@@ -8,7 +8,7 @@ const fetchTickets = async (
   adults: string
 ) => {
   try {
-    const response = await axios.get(`http://localhost:3001/tickets`, {
+    const response = await axios.get(`https://travelize-backend.onrender.com/tickets`, {
       params: {
         originLocationCode: originLocation,
         destinationLocationCode: destinationLocation,

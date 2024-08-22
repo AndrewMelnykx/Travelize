@@ -6,8 +6,14 @@ dotenv.config();
 
 export default defineConfig({
   plugins: [react()],
+<<<<<<< HEAD
   define: {
     "process.env": process.env,
+=======
+  base: "/",
+  build: {
+    outDir: "client/dist",
+>>>>>>> 06b5f8c724f27e6ff28a8a53428c732af972d40a
   },
   base: "/",
   resolve: {
