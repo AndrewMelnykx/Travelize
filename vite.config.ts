@@ -10,7 +10,7 @@ export default defineConfig({
     "process.env": process.env,
   },
   build: {
-    outDir: "dist",
+    outDir: "client/dist",
   },
   base: "/",
   resolve: {
