@@ -2,21 +2,19 @@ import express from "express";
 import process from "process";
 import cors from "cors";
 import dotenv from "dotenv";
-import routerHotel from "./routs/hotel.js";
-import routerFlight from "./routs/flights.js";
+import routerHotel from "./routes/hotel.js";
+import routerFlight from "./routes/flights.js";
 
 dotenv.config();
 
 const PORT = process.env.PORT || 3001;
-const corsOptions = {
-  origin: 'https://travelize-frontend.onrender.com', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-};
 
 const app = express();
 app.use(
-(cors(corsOptions))
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
 );
 app.get("/api", (req, res) => {
   3;
