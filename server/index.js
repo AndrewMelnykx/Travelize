@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://travelize-frontend.onrender.com",
     credentials: true,
   })
 );
