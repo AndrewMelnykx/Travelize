@@ -46,8 +46,8 @@ This project uses the following major dependencies:
 - [Material-UI (MUI)](https://mui.com/) - React components for faster and easier web development.
 - [React Router](https://reactrouter.com/) - Declarative routing for React.
 
-How to use it? 
-1. Sign up
-2. Recieve token
-3. Write downt the password with token
-4. Feel free to use my token 9569334c55mshbc698e12fef7f2cp11b752jsn3255bcf34825
+How to use it? 
+1. Sign up.
+2. Receive a token.
+3. Write down the password with a token.
+4. Feel free to use my token: 9569334c55mshbc698e12fef7f2cp11b752jsn3255bcf34825
