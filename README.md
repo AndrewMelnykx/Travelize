@@ -8,7 +8,8 @@
 
  It offers a smooth and responsive user experience, enhanced by React Spring animations and Toastify notifications. The app's seamless navigation is powered by React-Router-DOM, while the backend, developed with Node.js and Express.js, ensures fast and reliable performance. Trevelize is designed to make travel planning effortless and enjoyable, providing users with an intuitive interface and real-time updates for a truly immersive experience.
 
-                                                                                                   Short guide
+
+Short guide
 
 1. Fork the Repository (GitHub)
 Go to the GitHub repository you want to use.
@@ -45,7 +46,7 @@ This project uses the following major dependencies:
 - [Material-UI (MUI)](https://mui.com/) - React components for faster and easier web development.
 - [React Router](https://reactrouter.com/) - Declarative routing for React.
 
-                                                                                                  How to use it? 
+How to use it? 
 1. Sign up
 2. Recieve token
 3. Write downt the password with token
