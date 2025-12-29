@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { hotelsDataSelector } from "@store/selectors/data-selectors";
+
+import CardTemplate from "./template";
+import HotelFilter from "./filter";
+
+import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Box } from "@mui/material";
-import { useSelector } from "react-redux";
-
-import { hotelsDataSelector } from "@redux/selectors/data-selectors";
-import CardTemplate from "./HotelCardTemplate";
-import HotelFilter from "./HotelFilter";
 
 const HotelCards: React.FC = () => {
   const [city, setCity] = useState("");
@@ -27,19 +28,9 @@ const HotelCards: React.FC = () => {
       <HotelFilter city={city} handleCityChange={handleCityChange} />
 
       <ToastContainer />
-      <Box
-        display={"flex"}
-        alignSelf={"flex-start"}
-        mt={"10%"}
-        sx={{ background: "black" }}
-      >
-        <Box
-          display={"grid"}
-          gridTemplateColumns={"repeat(3,1fr)"}
-          rowGap={2}
-          columnGap={2}
-        >
-          {hotelsDataState.map((hotel) => (
+      <Box display={"flex"} alignSelf={"flex-start"} mt={"10%"} sx={{ background: "black" }}>
+        <Box display={"grid"} gridTemplateColumns={"repeat(3,1fr)"} rowGap={2} columnGap={2}>
+          {hotelsDataState.map(hotel => (
             <CardTemplate hotel={hotel} key={hotel.hotel.hotelId} />
           ))}
         </Box>

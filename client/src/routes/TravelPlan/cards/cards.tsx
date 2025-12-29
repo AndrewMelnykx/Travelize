@@ -1,7 +1,8 @@
-import { Box, useMediaQuery, Typography } from "@mui/material";
-import { ticketsDataSelector } from "@redux/selectors/data-selectors";
+import { ticketsDataSelector } from "@store/selectors/data-selectors";
 import { useSelector } from "react-redux";
-import TravelPlanCardTemplate from "./TravelPlanCardTemplate";
+import { Box, useMediaQuery, Typography } from "@mui/material";
+
+import TravelPlanCardTemplate from "./template";
 import ErrorPage from "../pages/ErrorPage";
 
 const TravelPlanCards = () => {
@@ -39,7 +40,7 @@ const TravelPlanCards = () => {
           width={"100%"}
           height={"100%"}
         >
-          {ticketsData.map((ticket) => (
+          {ticketsData.map(ticket => (
             <TravelPlanCardTemplate ticket={ticket} key={ticket.id} />
           ))}
         </Box>

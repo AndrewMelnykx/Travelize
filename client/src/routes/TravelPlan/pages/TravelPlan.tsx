@@ -1,8 +1,8 @@
+import TravelPlanFilter from "../filter/travelFilter";
+
 import { Box, useMediaQuery } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import TravelPlanFilter from "../filter/TravelPlanFilter";
 
 const TravelPlan = () => {
   const isSmallScreen = useMediaQuery("(max-width: 850px)");

@@ -1,19 +1,21 @@
-import CustomAutocomplete from "@custom-ui/CustomAutocomplete";
 import { SyntheticEvent, useCallback, useState } from "react";
-import { UseStoreDispatcher } from "@redux/index";
+import { useSelector } from "react-redux";
+
+import FilterSlice from "@store/slices/filter-slice";
+import { UseStoreDispatcher } from "@store/index";
 import {
   fetchCitySuggestionsDepartureThunk,
   fetchCitySuggestionsArrivalThunk,
-} from "@redux/slices/actions-slice";
-import { useSelector } from "react-redux";
+} from "@store/slices/actions-slice";
 import {
   arrivalInputDataSelector,
   departureInputDataSelector,
-} from "@redux/selectors/data-selectors";
-import { City } from "@redux/types";
+} from "@store/selectors/data-selectors";
+import { City } from "@store/types";
+
 import { Box, debounce, useMediaQuery } from "@mui/material";
+import CustomAutocomplete from "@custom-ui/CustomAutocomplete";
 import { toast } from "react-toastify";
-import FilterSlice from "@redux/slices/filter-slice";
 
 const TravelAutocomplete = () => {
   const [cityArrival, setCityArrival] = useState<string>("");

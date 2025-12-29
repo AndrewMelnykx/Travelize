@@ -1,32 +1,26 @@
-import { symbolT, wordTimeInsteadT } from "@helpers/constants";
-import { Box, IconButton, Typography } from "@mui/material";
-import { TicketsDataItem } from "@redux/types";
-import FmdBadIcon from "@mui/icons-material/FmdBad";
 import React from "react";
-import TravelPlanPriceItem from "./TravelPlanPriceItem";
 import { useSelector } from "react-redux";
+import { arrivalSelector, departureSelector } from "@store/selectors/components-selectors";
+import { TicketsDataItem } from "@store/types";
 
-import {
-  arrivalSelector,
-  departureSelector,
-} from "@redux/selectors/components-selectors";
+import { Box, IconButton, Typography } from "@mui/material";
+import FmdBadIcon from "@mui/icons-material/FmdBad";
 
-const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({
-  ticket,
-}) => {
+import TravelPlanPriceItem from "./priceItem";
+import { symbolT, wordTimeInsteadT } from "@helpers/constants";
+
+const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({ ticket }) => {
   const cityArrival = useSelector(arrivalSelector);
   const cityDeparture = useSelector(departureSelector);
 
-  const ticketDepartureTime =
-    ticket.itineraries[0].segments[0].departure.at.replace(
-      symbolT,
-      wordTimeInsteadT
-    );
-  const ticketArrivalTime =
-    ticket.itineraries[0].segments[0].arrival.at.replace(
-      symbolT,
-      wordTimeInsteadT
-    );
+  const ticketDepartureTime = ticket.itineraries[0].segments[0].departure.at.replace(
+    symbolT,
+    wordTimeInsteadT,
+  );
+  const ticketArrivalTime = ticket.itineraries[0].segments[0].arrival.at.replace(
+    symbolT,
+    wordTimeInsteadT,
+  );
   return (
     <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
       <Box
@@ -60,11 +54,7 @@ const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({
         <Box display={"flex"} position={"absolute"} right={0} top={0} mb={"5%"}>
           <Typography variant="h6" color={"white"}>
             Arrival at :
-            <Typography
-              variant="h6"
-              color={"yellow"}
-              sx={{ "&:hover": { color: "white" } }}
-            >
+            <Typography variant="h6" color={"yellow"} sx={{ "&:hover": { color: "white" } }}>
               {ticketArrivalTime}
             </Typography>
           </Typography>

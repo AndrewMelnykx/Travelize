@@ -1,18 +1,20 @@
-import { Box, useMediaQuery } from "@mui/material";
 import React, { ChangeEvent, useState } from "react";
-import CustomInput from "@custom-ui/CustomInputModal";
-import "react-toastify/dist/ReactToastify.css";
-import TravelAutocomplete from "./TravelAutocompletes";
 import { useSelector } from "react-redux";
+
 import {
   adultsSelector,
   arrivalSelector,
   departureSelector,
-} from "@redux/selectors/components-selectors";
+} from "@store/selectors/components-selectors";
 
+import { Box, useMediaQuery } from "@mui/material";
 import CustomSelect from "@custom-ui/CustomSelect";
-import TicketsAnimation from "../../../components/tickets-animation/TicketsAnimation";
-import TravelFilterCustomButton from "./TarvelFilterCustomButton";
+import CustomInput from "@custom-ui/CustomInputModal";
+import TravelAutocomplete from "./customAutocomplete";
+
+import TicketsAnimation from "client/src/components/tickets-animation/TicketsAnimation";
+import TravelFilterCustomButton from "./customButton";
+import "react-toastify/dist/ReactToastify.css";
 
 const TravelPlanFilter = () => {
   const isSmallScreen = useMediaQuery("(max-width: 850px)");
@@ -40,19 +42,8 @@ const TravelPlanFilter = () => {
       alignItems={"center"}
       flexDirection={"column"}
     >
-      <Box
-        display="flex"
-        width={"100%"}
-        flexDirection={"column"}
-        color={"inherit"}
-      >
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          gap={1}
-          width={"100%"}
-          position={"relative"}
-        >
+      <Box display="flex" width={"100%"} flexDirection={"column"} color={"inherit"}>
+        <Box display={"flex"} flexDirection={"column"} gap={1} width={"100%"} position={"relative"}>
           <TravelAutocomplete />
         </Box>
       </Box>

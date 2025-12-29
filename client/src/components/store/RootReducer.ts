@@ -1,12 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import AuthorizationSlice from "@slices/authorization-slice";
-import {
-  AuthorizationHandlingTypes,
-  DataHandlingTypes,
-  FilterHandlingType,
-} from "@redux/types";
-import DataSlice from "@redux/slices/data-slice";
-import FilterSlice from "@redux/slices/filter-slice";
+import DataSlice from "@store/slices/data-slice";
+import FilterSlice from "@store/slices/filter-slice";
+
+import { AuthorizationHandlingTypes, DataHandlingTypes, FilterHandlingType } from "@store/types";
 
 export interface RootState {
   authorization: AuthorizationHandlingTypes;

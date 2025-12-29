@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import TravelIconsItem from "./TravelIconsItem";
+import TravelIconsItem from "./iconsItem";
 
 const TravelPlanPriceItem = ({
   ticketArrivalTime,
@@ -21,23 +21,11 @@ const TravelPlanPriceItem = ({
       width={"100%"}
     >
       <Box alignSelf={"flex-end"} flexDirection={"column"}>
-        <TravelIconsItem
-          cityArrival={cityArrival}
-          cityDeparture={cityDeparture}
-        />
+        <TravelIconsItem cityArrival={cityArrival} cityDeparture={cityDeparture} />
 
-        <Typography
-          variant="h6"
-          color={"white"}
-          flexDirection={"column"}
-          mt={"2%"}
-        >
+        <Typography variant="h6" color={"white"} flexDirection={"column"} mt={"2%"}>
           Departure at :
-          <Typography
-            variant="h6"
-            color={"yellow"}
-            sx={{ "&:hover": { color: "white" } }}
-          >
+          <Typography variant="h6" color={"yellow"} sx={{ "&:hover": { color: "white" } }}>
             {ticketDepartureTime}
           </Typography>
         </Typography>
