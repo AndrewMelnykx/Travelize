@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
+
 import Hero from "../components/hero/Hero";
 import HomeImage from "../assets/images/home-image.jpg";
 import { Destination } from "../components/travels/destination/Destination";

@@ -1,4 +1,4 @@
-import { Header } from "@header/Header";
+import { Header } from "@header/index";
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import configureMockStore from "redux-mock-store";
@@ -22,7 +22,7 @@ describe("Header", () => {
         <Router>
           <Header />
         </Router>
-      </Provider>
+      </Provider>,
     );
     expect(screen.getByText(/Travelize/i)).toBeInTheDocument();
   });
@@ -33,10 +33,10 @@ describe("Header", () => {
         <Router>
           <NavBar isNavBarVisible={true} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
-    MenuLinkItems.forEach((item) => {
+    MenuLinkItems.forEach(item => {
       const iconElement = screen.getByTestId(item.dataTestId + "Icon");
       expect(iconElement).toBeInTheDocument();
     });
@@ -47,7 +47,7 @@ describe("Header", () => {
         <Router>
           <Header />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByTestId("nav-bar")).toBeInTheDocument();
@@ -64,7 +64,7 @@ describe("Header", () => {
         <Router>
           <Header />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText(/Authorization/i)).toBeInTheDocument();
@@ -82,7 +82,7 @@ describe("Header", () => {
         <Router>
           <Header />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText(/Filling out sign up form/i)).toBeInTheDocument();

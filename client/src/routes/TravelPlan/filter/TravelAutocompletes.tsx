@@ -56,7 +56,7 @@ const TravelAutocomplete = () => {
   ) => {
     if (selectedCity) {
       setCityDepartureSelectedValue(selectedCity);
-      setCityDeparture(selectedCity.city); // Ensure the correct city is set
+      setCityDeparture(selectedCity.city);
       dispatch(FilterSlice.actions.handleDepartureCityValue(selectedCity.city));
     }
     console.log("Selected Departure City:", selectedCity?.city);

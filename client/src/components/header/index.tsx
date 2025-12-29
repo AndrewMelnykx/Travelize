@@ -1,29 +1,15 @@
 import React, { useState, ChangeEvent } from "react";
-import {
-  Paper,
-  Box,
-  Typography,
-  SvgIcon,
-  IconButton,
-  useMediaQuery,
-} from "@mui/material";
+import { Paper, Box, Typography, SvgIcon, IconButton, useMediaQuery } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { NavBar } from "@custom-ui/nav-bar/NavBar";
-import "./Header.css";
+import "./index.css";
 import CustomModal from "@modals/Modal";
 import { useSelector } from "react-redux";
-import {
-  signUpModalSelector,
-  loginModalSelector,
-} from "@redux/selectors/authorization-selectors";
+import { signUpModalSelector, loginModalSelector } from "@redux/selectors/authorization-selectors";
 import { UseStoreDispatcher } from "@redux/store/store";
 import AuthorizationSlice from "@redux/slices/authorization-slice";
-import {
-  signUpInputs,
-  loginInputs,
-  tokenInputId,
-} from "@data/static-data/inputs-data";
+import { signUpInputs, loginInputs, tokenInputId } from "@data/static-data/inputs-data";
 import { setCookieFromTokenInput } from "@helpers/helpers-funcs";
 import { isCloseIconSelector } from "@redux/selectors/components-selectors";
 import FilterSlice from "@redux/slices/filter-slice";
@@ -39,9 +25,7 @@ const Header = () => {
   const dispatch = UseStoreDispatcher();
 
   const handleIsCloseVisibility = () => {
-    dispatch(
-      FilterSlice.actions.handleCloseIconVisibility(!closeIconVisibility)
-    );
+    dispatch(FilterSlice.actions.handleCloseIconVisibility(!closeIconVisibility));
   };
 
   const handleCloseSignUp = () => {
@@ -56,20 +40,16 @@ const Header = () => {
 
   const handleSignUpInputsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
-    setInputsSignUp((initialInputs) =>
-      initialInputs.map((input) =>
-        input.id === id ? { ...input, value: value } : input
-      )
+    setInputsSignUp(initialInputs =>
+      initialInputs.map(input => (input.id === id ? { ...input, value: value } : input)),
     );
   };
   const handleLoginInputsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
     setCookieFromTokenInput(id, tokenInputId, value);
 
-    setInputsLogin((initialInputs) =>
-      initialInputs.map((input) =>
-        input.id === id ? { ...input, value: value } : input
-      )
+    setInputsLogin(initialInputs =>
+      initialInputs.map(input => (input.id === id ? { ...input, value: value } : input)),
     );
   };
 
@@ -82,13 +62,7 @@ const Header = () => {
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         }}
       >
-        <Typography
-          variant="h3"
-          ml={3}
-          mt={1}
-          className="header-typography"
-          fontFamily={"inherit"}
-        >
+        <Typography variant="h3" ml={3} mt={1} className="header-typography" fontFamily={"inherit"}>
           Travelize
         </Typography>
 

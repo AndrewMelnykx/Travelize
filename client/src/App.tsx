@@ -1,19 +1,23 @@
-import "./App.css";
-import "./index.css";
+import { Provider } from "react-redux";
+import store from "@redux/store/store";
+import { Routes, Route } from "react-router-dom";
+
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./helpers/font-theme";
-import { Routes, Route } from "react-router-dom";
+
 import Home from "@routes/Home";
 import Service from "@routes/Service";
 import About from "@routes/About";
 import TravelPlan from "@routes/TravelPlan/pages/TravelPlan";
 import Contact from "@routes/Contact";
-import { Provider } from "react-redux";
-import store from "@redux/store/store";
 import HotelCards from "@routes/HotelCards/HotelCards";
 import TicketsPage from "@routes/TravelPlan/pages/TicketsPage";
-import { Header } from "@header/Header";
+
+import { Header } from "@header/index";
 import { ToastContainer } from "react-toastify";
+
+import "./App.css";
+import "./index.css";
 
 function App() {
   return (
