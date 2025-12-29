@@ -1,24 +1,12 @@
 import React from "react";
-import {
-  Select,
-  MenuItem,
-  SelectChangeEvent,
-  InputLabel,
-  FormControl,
-} from "@mui/material";
-import { UseStoreDispatcher } from "@redux/store/store";
+import { Select, MenuItem, SelectChangeEvent, InputLabel, FormControl } from "@mui/material";
+import { UseStoreDispatcher } from "@redux/index";
 import { useSelector } from "react-redux";
 import { adultsSelector } from "@redux/selectors/components-selectors";
 import { FilterActions } from "@redux/slices/filter-slice";
 import { adultsSelectOptionsData } from "@data/static-data/inputs-data";
 
-const CustomSelect = ({
-  label,
-  labelId,
-}: {
-  label: string;
-  labelId: string;
-}) => {
+const CustomSelect = ({ label, labelId }: { label: string; labelId: string }) => {
   const dispatch = UseStoreDispatcher();
   const selectAdultsState = useSelector(adultsSelector);
 
@@ -68,7 +56,7 @@ const CustomSelect = ({
           },
         }}
       >
-        {adultsSelectOptionsData.map((item) => (
+        {adultsSelectOptionsData.map(item => (
           <MenuItem
             key={item.id}
             value={item.value}

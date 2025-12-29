@@ -1,6 +1,6 @@
 import CustomAutocomplete from "@custom-ui/CustomAutocomplete";
 import { SyntheticEvent, useCallback, useState } from "react";
-import { UseStoreDispatcher } from "@redux/store/store";
+import { UseStoreDispatcher } from "@redux/index";
 import {
   fetchCitySuggestionsDepartureThunk,
   fetchCitySuggestionsArrivalThunk,
@@ -18,10 +18,8 @@ import FilterSlice from "@redux/slices/filter-slice";
 const TravelAutocomplete = () => {
   const [cityArrival, setCityArrival] = useState<string>("");
   const [cityDeparture, setCityDeparture] = useState<string>("");
-  const [cityDepartureSelectedValue, setCityDepartureSelectedValue] =
-    useState<City | null>(null);
-  const [cityArrivalSelectedValue, setCityArrivalSelectedValue] =
-    useState<City | null>(null);
+  const [cityDepartureSelectedValue, setCityDepartureSelectedValue] = useState<City | null>(null);
+  const [cityArrivalSelectedValue, setCityArrivalSelectedValue] = useState<City | null>(null);
   const [options, setOptions] = useState<City[]>([]);
   const isSmallScreen = useMediaQuery("max-width:600px");
   const dispatch = UseStoreDispatcher();
@@ -29,30 +27,30 @@ const TravelAutocomplete = () => {
   const arrivalInputData = useSelector(arrivalInputDataSelector);
 
   const fetchCityDepartureSuggestionsDebounced = useCallback(
-    debounce(async (newCity) => {
+    debounce(async newCity => {
       try {
         await dispatch(fetchCitySuggestionsDepartureThunk(newCity));
       } catch (error) {
         toast.error("Failed to fetch new city, please try again later");
       }
     }, 1100),
-    []
+    [],
   );
 
   const fetchCityArrivalSuggestionsDebounced = useCallback(
-    debounce(async (newCity) => {
+    debounce(async newCity => {
       try {
         await dispatch(fetchCitySuggestionsArrivalThunk(newCity));
       } catch (error) {
         toast.error("Failed to fetch new city, please try again later");
       }
     }, 1100),
-    []
+    [],
   );
 
   const handleCitySelectDeparture = (
     event: SyntheticEvent<Element, Event>,
-    selectedCity: City | null
+    selectedCity: City | null,
   ) => {
     if (selectedCity) {
       setCityDepartureSelectedValue(selectedCity);
@@ -64,7 +62,7 @@ const TravelAutocomplete = () => {
 
   const handleCitySelectArrival = (
     event: SyntheticEvent<Element, Event>,
-    selectedCity: City | null
+    selectedCity: City | null,
   ) => {
     if (selectedCity) {
       setCityArrivalSelectedValue(selectedCity);
@@ -73,9 +71,7 @@ const TravelAutocomplete = () => {
     }
     console.log("Selected Arrival City:", selectedCity?.city);
   };
-  const handleInputChangeDeparture = (
-    event: SyntheticEvent<Element, Event>
-  ) => {
+  const handleInputChangeDeparture = (event: SyntheticEvent<Element, Event>) => {
     const newValue = (event.target as HTMLInputElement).value;
     setCityDeparture(newValue);
     fetchCityDepartureSuggestionsDebounced(newValue);

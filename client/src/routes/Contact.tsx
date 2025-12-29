@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../components/hero/Hero";
+import Hero from "../components/hero";
 import ContactImage from "../assets/images/contact-image.jpg";
 import { FooterContact } from "../components/footers/FooterContact";
 

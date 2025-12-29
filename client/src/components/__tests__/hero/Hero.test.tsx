@@ -1,4 +1,4 @@
-import Hero from "../../hero/Hero";
+import Hero from "../../hero";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
@@ -15,7 +15,7 @@ describe("Hero", () => {
     render(
       <BrowserRouter>
         <Hero {...defaultProps} />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     expect(screen.getByText(/justTitle/i)).toBeInTheDocument();
@@ -23,9 +23,7 @@ describe("Hero", () => {
     const heroContainer = screen.getByTestId("hero-container");
     const buttonWrapper = screen.getByTestId("button-wrapper");
 
-    expect(heroContainer).toHaveStyle(
-      `background-image: url(${defaultProps.imageLink})`
-    );
+    expect(heroContainer).toHaveStyle(`background-image: url(${defaultProps.imageLink})`);
     expect(heroContainer).toHaveClass(defaultProps.cName);
     expect(buttonWrapper).toHaveClass(defaultProps.buttonWrapperClassName);
   });

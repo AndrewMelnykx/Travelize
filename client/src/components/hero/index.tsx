@@ -3,7 +3,7 @@ import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import Cookies from "js-cookie";
-import "./Hero.css";
+import "./index.css";
 
 interface HeroProps {
   imageLink: string;
@@ -13,13 +13,7 @@ interface HeroProps {
   buttonWrapperClassName: string;
 }
 
-const Hero: React.FC<HeroProps> = ({
-  imageLink,
-  title,
-  text,
-  cName,
-  buttonWrapperClassName,
-}) => {
+const Hero: React.FC<HeroProps> = ({ imageLink, title, text, cName, buttonWrapperClassName }) => {
   const navigate = useNavigate();
   const handleTicketAccess = () => {
     const token = Cookies.get("userToken");
@@ -66,11 +60,7 @@ const Hero: React.FC<HeroProps> = ({
           {text}
         </Typography>
 
-        <Box
-          mt={2}
-          className={buttonWrapperClassName}
-          data-testid="button-wrapper"
-        >
+        <Box mt={2} className={buttonWrapperClassName} data-testid="button-wrapper">
           <Button
             variant="contained"
             size="large"

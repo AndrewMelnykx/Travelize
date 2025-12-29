@@ -6,7 +6,7 @@ import { fetchHotelsDataThunk } from "@redux/slices/actions-slice";
 import { useSelector } from "react-redux";
 import SendIcon from "@mui/icons-material/Send";
 import { adultsSelector } from "@redux/selectors/components-selectors";
-import { UseStoreDispatcher } from "@redux/store/store";
+import { UseStoreDispatcher } from "@redux/index";
 
 export default function LoadingButtonsTransition({ city }: { city: string }) {
   const [loading, setLoading] = React.useState(false);
@@ -19,7 +19,7 @@ export default function LoadingButtonsTransition({ city }: { city: string }) {
         fetchHotelsDataThunk({
           cityName: city.toString(),
           adultsQuantity: selectAdultsState.toString(),
-        })
+        }),
       );
     } catch (error) {
       console.error("Error fetching hotels:", error);

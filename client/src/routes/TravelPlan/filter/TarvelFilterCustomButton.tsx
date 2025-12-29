@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import { toast } from "react-toastify";
 import { fetchTicketsDataThunk } from "@redux/slices/actions-slice";
 import SendIcon from "@mui/icons-material/Send";
-import { UseStoreDispatcher } from "@redux/store/store";
+import { UseStoreDispatcher } from "@redux/index";
 import { useNavigate } from "react-router-dom";
 
 interface TravelFilterCustomButtonProps {
@@ -40,7 +40,7 @@ const TravelFilterCustomButton: React.FC<TravelFilterCustomButtonProps> = ({
           departureDate: departureDate,
           returnDate: returnDate,
           adults: passengersQuantity.toString(),
-        })
+        }),
       );
       console.log("result:", result);
     } catch (error) {
@@ -49,13 +49,7 @@ const TravelFilterCustomButton: React.FC<TravelFilterCustomButtonProps> = ({
     } finally {
       handleSuccessfulFetch();
     }
-  }, [
-    departureCity,
-    arrivalCity,
-    departureDate,
-    returnDate,
-    passengersQuantity,
-  ]);
+  }, [departureCity, arrivalCity, departureDate, returnDate, passengersQuantity]);
   const handleClick = () => {
     setLoading(true);
     handleTicketsFetching();

@@ -1,18 +1,22 @@
 import React, { useState, ChangeEvent } from "react";
+import { useSelector } from "react-redux";
+
+import { signUpModalSelector, loginModalSelector } from "@redux/selectors/authorization-selectors";
+import { UseStoreDispatcher } from "@redux/index";
+
+import { isCloseIconSelector } from "@redux/selectors/components-selectors";
+import FilterSlice from "@redux/slices/filter-slice";
+import AuthorizationSlice from "@redux/slices/authorization-slice";
+
 import { Paper, Box, Typography, SvgIcon, IconButton, useMediaQuery } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { NavBar } from "@custom-ui/nav-bar/NavBar";
-import "./index.css";
-import CustomModal from "@modals/Modal";
-import { useSelector } from "react-redux";
-import { signUpModalSelector, loginModalSelector } from "@redux/selectors/authorization-selectors";
-import { UseStoreDispatcher } from "@redux/store/store";
-import AuthorizationSlice from "@redux/slices/authorization-slice";
+import CustomModal from "@modals/index";
 import { signUpInputs, loginInputs, tokenInputId } from "@data/static-data/inputs-data";
 import { setCookieFromTokenInput } from "@helpers/helpers-funcs";
-import { isCloseIconSelector } from "@redux/selectors/components-selectors";
-import FilterSlice from "@redux/slices/filter-slice";
+
+import "./index.css";
 
 const Header = () => {
   const closeIconVisibility = useSelector(isCloseIconSelector);

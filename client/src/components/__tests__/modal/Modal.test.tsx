@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
-import CustomModal from "@modals/Modal";
+import CustomModal from "@modals/index";
 import configureMockStore from "redux-mock-store";
 
 const mockStore = configureMockStore();
@@ -39,7 +39,7 @@ describe("CustomModal", () => {
     render(
       <Provider store={store}>
         <CustomModal {...defaultProps} />
-      </Provider>
+      </Provider>,
     );
     expect(screen.getByText(/Test Modal/i)).toBeInTheDocument();
     expect(screen.getByText(/Please enter your email/i)).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe("CustomModal", () => {
     render(
       <Provider store={store}>
         <CustomModal {...defaultProps} />
-      </Provider>
+      </Provider>,
     );
     const loginButton = screen.getByRole("button", { name: /Login/i });
     fireEvent.click(loginButton);
@@ -66,7 +66,7 @@ describe("CustomModal", () => {
     render(
       <Provider store={store}>
         <CustomModal {...defaultProps} />
-      </Provider>
+      </Provider>,
     );
     fireEvent.change(screen.getByLabelText(/Email/i), {
       target: { value: "test@example.com" },

@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../components/hero/Hero";
+import Hero from "../components/hero";
 import ServiceImage from "../assets/images/service-image.jpg";
 import { FooterServices } from "../components/footers/FooterServices";
 

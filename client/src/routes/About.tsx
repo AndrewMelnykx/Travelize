@@ -1,4 +1,4 @@
-import Hero from "../components/hero/Hero";
+import Hero from "../components/hero";
 import AboutImage from "../assets/images/about-image.jpg";
 import { FooterAbout } from "../components/footers/FooterAbout";
 import React from "react";

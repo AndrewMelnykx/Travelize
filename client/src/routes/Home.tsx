@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useRef } from "react";
 
-import Hero from "../components/hero/Hero";
+import Hero from "../components/hero";
 import HomeImage from "../assets/images/home-image.jpg";
-import { Destination } from "../components/travels/destination/Destination";
 import TripCards from "../components/travels/trip/Trip";
+import { Destination } from "../components/travels/destination/Destination";
 import { FooterHome } from "../components/footers/FooterHome";
 
 const Home = () => {

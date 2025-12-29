@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button, Typography, SvgIcon, Box, useMediaQuery } from "@mui/material";
 import * as Icons from "@mui/icons-material";
 import "./NavBar.css";
-import { UseStoreDispatcher } from "@redux/store/store";
+import { UseStoreDispatcher } from "@redux/index";
 import AuthorizationSlice from "@redux/slices/authorization-slice";
 import FilterSlice from "@redux/slices/filter-slice";
 
@@ -30,11 +30,7 @@ const NavBar: React.FC<NavBarTypes> = ({ isNavBarVisible }) => {
           const IconComponent = Icons[item.icon];
           return (
             <li key={index} className={item.cName}>
-              <Link
-                to={item.url}
-                className="router-nav-link"
-                onClick={handleRouteChanging}
-              >
+              <Link to={item.url} className="router-nav-link" onClick={handleRouteChanging}>
                 <Box display={"flex"}>
                   {IconComponent && (
                     <SvgIcon
