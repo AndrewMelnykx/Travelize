@@ -14,7 +14,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { NavBar } from "@custom-ui/nav-bar";
 import CustomModal from "@modals/index";
 import { signUpInputs, loginInputs, tokenInputId } from "@data/static-data/inputs-data";
-import { setCookieFromTokenInput } from "@helpers/helpers-funcs";
+import { setTokenInLocalStorage } from "@helpers/helpers-funcs";
 
 import "./index.css";
 
@@ -50,10 +50,11 @@ const Header = () => {
     setInputsSignUp(initialInputs =>
       initialInputs.map(input => (input.id === id ? { ...input, value: value } : input)),
     );
+    setTokenInLocalStorage(id, tokenInputId, value);
   };
   const handleLoginInputsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
-    setCookieFromTokenInput(id, tokenInputId, value);
+    setTokenInLocalStorage(id, tokenInputId, value);
 
     setInputsLogin(initialInputs =>
       initialInputs.map(input => (input.id === id ? { ...input, value: value } : input)),

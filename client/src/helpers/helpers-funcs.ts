@@ -1,10 +1,9 @@
-import Cookies from "js-cookie";
 import { AnyAction } from "@reduxjs/toolkit";
 import { Dispatch } from "react";
 
-const setCookieFromTokenInput = (inputId: string, inputIdFromArray: string, value: string) => {
+const setTokenInLocalStorage = (inputId: string, inputIdFromArray: string, value: string) => {
   if (inputId === inputIdFromArray && value) {
-    Cookies.set("userToken", value, { expires: 1 });
+    localStorage.setItem("userToken", value);
   }
 };
 
@@ -28,4 +27,4 @@ const debounceDispatch = (dispatch: Dispatch<AnyAction>, time: number) => {
   };
 };
 
-export { setCookieFromTokenInput, debounce, debounceDispatch };
+export { setTokenInLocalStorage, debounce, debounceDispatch };

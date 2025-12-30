@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { UseStoreDispatcher } from "@store/index";
 import { toggleSignUp } from "@store/slices/authorization-slice";
@@ -25,12 +24,12 @@ const Hero: React.FC<HeroProps> = ({ imageLink, title, text, cName, buttonWrappe
   const dispatch = UseStoreDispatcher();
   const debouncedDispatch = useRef(debounceDispatch(dispatch, DEBOUNCE_HERO_DELAY_MS)).current;
 
-  const token = Cookies.get(userToken);
-
   const handleIfNotAuthorized = () => {
+    const token = localStorage.getItem(userToken);
+
     if (!token) {
       debouncedDispatch(toggleSignUp(true));
-      toast.error(messages.NOT_AUTHORIZED);
+      toast.error(messages.NOT_AUTHORIZED + token);
     } else {
       toast.success(messages.LOGIN_SUCCESS);
       navigate("/travel-plan");
