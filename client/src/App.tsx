@@ -10,7 +10,7 @@ import Service from "@routes/Service";
 import About from "@routes/About";
 import TravelPlan from "@routes/TravelPlan/pages/TravelPlan";
 import Contact from "@routes/Contact";
-import HotelCards from "@routes/HotelCards/HotelCards";
+import HotelCards from "@routes/HotelCards";
 import TicketsPage from "@routes/TravelPlan/pages/TicketsPage";
 
 import { Header } from "@header/index";

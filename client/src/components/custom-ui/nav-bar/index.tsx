@@ -1,12 +1,15 @@
 import React from "react";
-import { MenuLinkItems } from "./NavBarData";
 import { Link } from "react-router-dom";
+import { UseStoreDispatcher } from "@store/index";
+
 import { Button, Typography, SvgIcon, Box, useMediaQuery } from "@mui/material";
 import * as Icons from "@mui/icons-material";
-import "./NavBar.css";
-import { UseStoreDispatcher } from "@redux/index";
-import AuthorizationSlice from "@redux/slices/authorization-slice";
-import FilterSlice from "@redux/slices/filter-slice";
+
+import AuthorizationSlice from "@store/slices/authorization-slice";
+import FilterSlice from "@store/slices/filter-slice";
+
+import { MenuLinkItems } from "./data";
+import "./index.css";
 
 interface NavBarTypes {
   isNavBarVisible: boolean;

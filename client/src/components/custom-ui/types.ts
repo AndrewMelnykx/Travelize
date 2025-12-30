@@ -1,16 +1,10 @@
-import { City } from "@redux/types";
+import { City } from "@store/types";
 import { SyntheticEvent } from "react";
 
 interface CustomAutocompleteProps {
-  handleChangeOfTheInput: (
-    event: SyntheticEvent<Element, Event>,
-    newInputValue: string
-  ) => void;
+  handleChangeOfTheInput: (event: SyntheticEvent<Element, Event>, newInputValue: string) => void;
   setOptionsForInputs: (options: City[]) => void;
-  setValueForInput: (
-    event: SyntheticEvent<Element, Event>,
-    selectedCity: City | null
-  ) => void;
+  setValueForInput: (event: SyntheticEvent<Element, Event>, selectedCity: City | null) => void;
   label: string;
   options: City[];
   value: City | null;

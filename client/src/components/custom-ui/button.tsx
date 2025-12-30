@@ -1,12 +1,14 @@
 import * as React from "react";
+import { useSelector } from "react-redux";
+
+import { adultsSelector } from "@store/selectors/components-selectors";
+import { UseStoreDispatcher } from "@store/index";
+import { fetchHotelsDataThunk } from "@store/slices/actions-slice";
+
 import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
-import { toast } from "react-toastify";
-import { fetchHotelsDataThunk } from "@redux/slices/actions-slice";
-import { useSelector } from "react-redux";
 import SendIcon from "@mui/icons-material/Send";
-import { adultsSelector } from "@redux/selectors/components-selectors";
-import { UseStoreDispatcher } from "@redux/index";
+import { toast } from "react-toastify";
 
 export default function LoadingButtonsTransition({ city }: { city: string }) {
   const [loading, setLoading] = React.useState(false);

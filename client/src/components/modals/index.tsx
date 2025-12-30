@@ -8,7 +8,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 
 import { Box } from "@mui/material";
 import { ModalProps } from "./types";
-import CustomInput from "@custom-ui/CustomInputModal";
+import CustomInput from "@custom-ui/modal";
 import { useSelector } from "react-redux";
 import { loginModalSelector } from "@redux/selectors/authorization-selectors";
 
@@ -39,12 +39,10 @@ const CustomModal = ({
           onSubmit: handleSubmit,
         }}
       >
-        <DialogTitle style={{ background: "black", color: "white" }}>
-          {modalTitle}
-        </DialogTitle>
+        <DialogTitle style={{ background: "black", color: "white" }}>{modalTitle}</DialogTitle>
         <DialogContent style={{ background: "black", color: "white" }}>
           <DialogContentText>{textTitle}</DialogContentText>
-          {inputs.map((input) => (
+          {inputs.map(input => (
             <CustomInput
               key={input.id}
               id={input.id}
@@ -56,10 +54,7 @@ const CustomModal = ({
             />
           ))}
         </DialogContent>
-        <DialogContentText
-          ml={3}
-          style={{ background: "black", color: "white" }}
-        >
+        <DialogContentText ml={3} style={{ background: "black", color: "white" }}>
           {textReminder}
         </DialogContentText>
         <DialogActions
@@ -67,18 +62,12 @@ const CustomModal = ({
           sx={{ display: "flex", justifyContent: "space-between" }}
         >
           {loginState ? null : (
-            <Button
-              onClick={handleOpening}
-              sx={{ alignSelf: "flex-start", color: "inherit" }}
-            >
+            <Button onClick={handleOpening} sx={{ alignSelf: "flex-start", color: "inherit" }}>
               Login
             </Button>
           )}
           <Box>
-            <Button
-              onClick={handleClosing}
-              sx={{ alignSelf: "flex-end", color: "inherit" }}
-            >
+            <Button onClick={handleClosing} sx={{ alignSelf: "flex-end", color: "inherit" }}>
               Cancel
             </Button>
             <Button type="submit" sx={{ color: "inherit" }}>

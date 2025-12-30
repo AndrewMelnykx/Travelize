@@ -1,9 +1,11 @@
 import React from "react";
-import { Select, MenuItem, SelectChangeEvent, InputLabel, FormControl } from "@mui/material";
-import { UseStoreDispatcher } from "@redux/index";
 import { useSelector } from "react-redux";
-import { adultsSelector } from "@redux/selectors/components-selectors";
-import { FilterActions } from "@redux/slices/filter-slice";
+
+import { UseStoreDispatcher } from "@store/index";
+import { adultsSelector } from "@store/selectors/components-selectors";
+import { FilterActions } from "@store/slices/filter-slice";
+
+import { Select, MenuItem, SelectChangeEvent, InputLabel, FormControl } from "@mui/material";
 import { adultsSelectOptionsData } from "@data/static-data/inputs-data";
 
 const CustomSelect = ({ label, labelId }: { label: string; labelId: string }) => {

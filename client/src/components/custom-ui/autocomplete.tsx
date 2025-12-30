@@ -2,7 +2,7 @@ import React, { SyntheticEvent } from "react";
 import { Autocomplete, Typography, Grid, TextField } from "@mui/material";
 
 import { LocationOn } from "@mui/icons-material";
-import { City } from "@redux/types";
+import { City } from "@store/types";
 import { CustomAutocompleteProps } from "./types";
 
 const CustomAutocomplete = ({
@@ -35,24 +35,21 @@ const CustomAutocomplete = ({
         },
       }}
       getOptionLabel={(option: City) => option.city}
-      filterOptions={(x) => x}
+      filterOptions={x => x}
       options={options}
       autoComplete
       includeInputInList
       value={value}
       filterSelectedOptions
       noOptionsText="No locations"
-      onChange={(
-        event: SyntheticEvent<Element, Event>,
-        newValue: City | null
-      ) => {
+      onChange={(event: SyntheticEvent<Element, Event>, newValue: City | null) => {
         setOptionsForInputs([...options]);
         setValueForInput(event, newValue);
       }}
       onInputChange={(event, newInputValue) => {
         handleChangeOfTheInput(event, newInputValue);
       }}
-      renderInput={(params) => (
+      renderInput={params => (
         <TextField
           {...params}
           label={label}

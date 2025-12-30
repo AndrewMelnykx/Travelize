@@ -1,8 +1,8 @@
 import React from "react";
 import { Paper, Box, FormControl, InputLabel } from "@mui/material";
-import CustomInput from "@custom-ui/CustomInputModal";
-import CustomSelect from "@custom-ui/CustomSelect";
-import LoadingButtonsTransition from "@custom-ui/CustomButton";
+import CustomInput from "@custom-ui/modal";
+import CustomSelect from "@custom-ui/select";
+import LoadingButtonsTransition from "@custom-ui/button";
 
 const HotelFilter = ({
   city,

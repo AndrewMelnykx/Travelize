@@ -4,8 +4,8 @@ import React from "react";
 import configureMockStore from "redux-mock-store";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import { MenuLinkItems } from "@custom-ui/nav-bar/NavBarData";
-import { NavBar } from "@custom-ui/nav-bar/NavBar";
+import { MenuLinkItems } from "@custom-ui/nav-bar/data";
+import { NavBar } from "@custom-ui/nav-bar";
 
 const mockStore = configureMockStore();
 const store = mockStore({
