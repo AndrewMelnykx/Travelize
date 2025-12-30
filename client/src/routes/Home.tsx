@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 
 import Hero from "../components/hero";
-import HomeImage from "../assets/images/home-image.jpg";
+import HomeImage from "@assets/images/home-image.avif";
 import TripCards from "../components/travels/trip/Trip";
 import { Destination } from "../components/travels/destination/Destination";
 import { FooterHome } from "../components/footers/FooterHome";
