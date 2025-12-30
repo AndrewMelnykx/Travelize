@@ -25,16 +25,6 @@ const loginInputs: CustomInputProps[] = [
       e;
     },
   },
-  {
-    id: "1",
-    label: "Password",
-    type: "password",
-    name: "Password",
-    value: "",
-    onChange: (e: ChangeEvent<HTMLInputElement>) => {
-      e;
-    },
-  },
 ];
 
 const adultsSelectOptionsData = [

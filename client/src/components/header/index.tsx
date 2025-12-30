@@ -37,11 +37,12 @@ const Header = () => {
     setInputsSignUp(signUpInputs);
   };
   const handleLoginOpening = () => {
+    setInputsLogin(loginInputs);
     dispatch(AuthorizationSlice.actions.toggleLogin(true));
   };
   const handleLoginClosing = () => {
     dispatch(AuthorizationSlice.actions.toggleLogin(false));
-    setInputsLogin(loginInputs);
+    dispatch(AuthorizationSlice.actions.toggleSignUp(false));
   };
 
   const handleSignUpInputsChange = (event: ChangeEvent<HTMLInputElement>) => {
