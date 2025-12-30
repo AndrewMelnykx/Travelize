@@ -10,10 +10,10 @@ import {
 import { Box, useMediaQuery } from "@mui/material";
 import CustomSelect from "@custom-ui/select";
 import CustomInput from "@custom-ui/modal";
-import TravelAutocomplete from "./customAutocomplete";
+import TravelAutocomplete from "./autocomplete";
 
 import TicketsAnimation from "../../../components/tickets-animation/TicketsAnimation";
-import TravelFilterCustomButton from "./customButton";
+import TravelFilterCustomButton from "./button";
 import "react-toastify/dist/ReactToastify.css";
 
 const TravelPlanFilter = () => {

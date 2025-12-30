@@ -8,19 +8,17 @@ import {
   useMediaQuery,
   Button,
 } from "@mui/material";
-import { HotelDataItem } from "@redux/types";
+import { HotelDataItem } from "@store/types";
 import HotelImageSample from "@assets/images/cards-images/hotel-image.jpg";
 import React from "react";
 
 const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
   const isScreenSmall = useMediaQuery("(max-width:600px)");
 
-  const hotelPrices = hotel.offers.map((hotelItem) => hotelItem.price.total);
-  const currency = hotel.offers.map((hotelItem) => hotelItem.price.currency);
-  const beds = hotel.offers.map(
-    (hotelItem) => hotelItem.room.typeEstimated.beds
-  );
-  const guests = hotel.offers.map((hotelItem) => hotelItem.guests.adults);
+  const hotelPrices = hotel.offers.map(hotelItem => hotelItem.price.total);
+  const currency = hotel.offers.map(hotelItem => hotelItem.price.currency);
+  const beds = hotel.offers.map(hotelItem => hotelItem.room.typeEstimated.beds);
+  const guests = hotel.offers.map(hotelItem => hotelItem.guests.adults);
   return (
     <Paper
       sx={{
@@ -44,16 +42,9 @@ const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
           />
         </Box>
 
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          maxHeight={"200px"}
-          minHeight={"200px"}
-        >
+        <Box display={"flex"} flexDirection={"column"} maxHeight={"200px"} minHeight={"200px"}>
           <CardContent sx={{ height: "100%" }}>
-            <Typography sx={{ fontSize: "0.8rem" }}>
-              Hotel image sample*
-            </Typography>
+            <Typography sx={{ fontSize: "0.8rem" }}>Hotel image sample*</Typography>
             <Typography variant="h5"> {hotel.hotel.name}</Typography>
             <Typography variant="h6">
               Price per night: {hotelPrices} {currency}

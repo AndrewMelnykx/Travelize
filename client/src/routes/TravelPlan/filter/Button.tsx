@@ -1,11 +1,12 @@
 import React, { useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { UseStoreDispatcher } from "@store/index";
+import { fetchTicketsDataThunk } from "@store/slices/actions-slice";
+
 import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
-import { toast } from "react-toastify";
-import { fetchTicketsDataThunk } from "@redux/slices/actions-slice";
 import SendIcon from "@mui/icons-material/Send";
-import { UseStoreDispatcher } from "@redux/index";
-import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 interface TravelFilterCustomButtonProps {
   departureCity: string;

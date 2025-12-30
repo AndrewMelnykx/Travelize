@@ -2,7 +2,7 @@ import { ticketsDataSelector } from "@store/selectors/data-selectors";
 import { useSelector } from "react-redux";
 import { Box, useMediaQuery, Typography } from "@mui/material";
 
-import TravelPlanCardTemplate from "./template";
+import TravelPlanCardTemplate from "./Tempalte";
 import ErrorPage from "../pages/ErrorPage";
 
 const TravelPlanCards = () => {

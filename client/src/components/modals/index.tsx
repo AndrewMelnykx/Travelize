@@ -1,4 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { loginModalSelector } from "@store/selectors/authorization-selectors";
+
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -7,10 +10,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 import { Box } from "@mui/material";
-import { ModalProps } from "./types";
 import CustomInput from "@custom-ui/modal";
-import { useSelector } from "react-redux";
-import { loginModalSelector } from "@redux/selectors/authorization-selectors";
+import { ModalProps } from "./types";
 
 const CustomModal = ({
   modalTitle,
