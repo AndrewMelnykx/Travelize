@@ -2,14 +2,7 @@ import React from "react";
 import { CustomInputProps } from "@modals/types";
 import { StyledTextField } from "@helpers/custom-elements";
 
-const CustomInput = ({
-  id,
-  name,
-  label,
-  type,
-  onChange,
-  value,
-}: CustomInputProps) => {
+const CustomInput = ({ id, name, label, type, onChange, value }: CustomInputProps) => {
   return (
     <StyledTextField
       autoFocus
@@ -23,6 +16,11 @@ const CustomInput = ({
       variant="standard"
       onChange={onChange}
       value={value}
+      sx={{
+        input: { color: "white" },
+        label: { color: "white" },
+        "& .MuiInputLabel-root.Mui-focused": { color: "white" },
+      }}
     />
   );
 };

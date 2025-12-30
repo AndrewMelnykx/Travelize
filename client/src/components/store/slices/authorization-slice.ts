@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { AuthorizationHandlingTypes } from "@redux/types";
+import { AuthorizationHandlingTypes } from "@store/types";
 
 const initialState: AuthorizationHandlingTypes = {
   isSignUpVisible: false,
@@ -18,4 +18,7 @@ const AuthorizationSlice = createSlice({
     },
   },
 });
+
+export const { toggleSignUp, toggleLogin } = AuthorizationSlice.actions;
+
 export default AuthorizationSlice;

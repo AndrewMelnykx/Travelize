@@ -10,7 +10,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 import { Box } from "@mui/material";
-import CustomInput from "@custom-ui/modal";
+import CustomInput from "@custom-ui/Input";
 import { ModalProps } from "./types";
 
 const CustomModal = ({
@@ -36,12 +36,27 @@ const CustomModal = ({
         open={true}
         onClose={handleClosing}
         PaperProps={{
+          sx: {
+            background: "black",
+            widows: "65%",
+            borderRadius: "20px",
+            boxShadow: "20px 25px 25px rgba(0,0,0,0.5)",
+          },
           component: "form",
           onSubmit: handleSubmit,
         }}
       >
-        <DialogTitle style={{ background: "black", color: "white" }}>{modalTitle}</DialogTitle>
-        <DialogContent style={{ background: "black", color: "white" }}>
+        <DialogTitle
+          style={{
+            background: "black",
+            color: "white",
+            alignSelf: "center",
+            fontSize: "2.1rem",
+          }}
+        >
+          {modalTitle}
+        </DialogTitle>
+        <DialogContent style={{ background: "black", color: "white", borderRadius: "15px" }}>
           <DialogContentText>{textTitle}</DialogContentText>
           {inputs.map(input => (
             <CustomInput

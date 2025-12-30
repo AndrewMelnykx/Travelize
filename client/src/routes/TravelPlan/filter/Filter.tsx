@@ -9,7 +9,7 @@ import {
 
 import { Box, useMediaQuery } from "@mui/material";
 import CustomSelect from "@custom-ui/select";
-import CustomInput from "@custom-ui/modal";
+import CustomInput from "@custom-ui/Input";
 import TravelAutocomplete from "./autocomplete";
 
 import TicketsAnimation from "../../../components/tickets-animation/TicketsAnimation";

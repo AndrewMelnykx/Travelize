@@ -1,8 +1,15 @@
-import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import React, { useRef } from "react";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+import { UseStoreDispatcher } from "@store/index";
+import { toggleSignUp } from "@store/slices/authorization-slice";
+
+import { Box, Typography, Button } from "@mui/material";
+import { toast, ToastContainer } from "react-toastify";
+
+import { debounceDispatch } from "@helpers/helpers-funcs";
+import { DEBOUNCE_HERO_DELAY_MS, messages, userToken } from "@helpers/constants";
+
 import "./index.css";
 
 interface HeroProps {
@@ -15,14 +22,23 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ imageLink, title, text, cName, buttonWrapperClassName }) => {
   const navigate = useNavigate();
-  const handleTicketAccess = () => {
-    const token = Cookies.get("userToken");
+  const dispatch = UseStoreDispatcher();
+  const debouncedDispatch = useRef(debounceDispatch(dispatch, DEBOUNCE_HERO_DELAY_MS)).current;
 
+  const token = Cookies.get(userToken);
+
+  const handleIfNotAuthorized = () => {
     if (!token) {
-      toast.error("You need a token for this page.Please login or sign up !");
+      debouncedDispatch(toggleSignUp(true));
+      toast.error(messages.NOT_AUTHORIZED);
     } else {
+      toast.success(messages.LOGIN_SUCCESS);
       navigate("/travel-plan");
     }
+  };
+
+  const handleTicketAccess = () => {
+    handleIfNotAuthorized();
   };
 
   return (
@@ -77,7 +93,6 @@ const Hero: React.FC<HeroProps> = ({ imageLink, title, text, cName, buttonWrappe
               },
             }}
           >
-            {" "}
             Travel plan
           </Button>
         </Box>

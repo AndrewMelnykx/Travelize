@@ -34,12 +34,14 @@ const Header = () => {
 
   const handleCloseSignUp = () => {
     dispatch(AuthorizationSlice.actions.toggleSignUp(false));
+    setInputsSignUp(signUpInputs);
   };
   const handleLoginOpening = () => {
     dispatch(AuthorizationSlice.actions.toggleLogin(true));
   };
   const handleLoginClosing = () => {
     dispatch(AuthorizationSlice.actions.toggleLogin(false));
+    setInputsLogin(loginInputs);
   };
 
   const handleSignUpInputsChange = (event: ChangeEvent<HTMLInputElement>) => {
