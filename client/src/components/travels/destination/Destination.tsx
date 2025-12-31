@@ -1,9 +1,9 @@
 import React from "react";
 
-import FujiyamaPictureOne from "@assets/images/images-for-home/fujiyama-img.jpg";
-import FujiyamaPictureTwo from "@assets/images/images-for-home/fujiyama-second-img.jpg";
-import ThailandOne from "@assets/images/images-for-home/thailand-one.jpg";
-import ThailandTwo from "@assets/images/images-for-home/thailand-two.jpg";
+import FujiyamaPictureOne from "@assets/images/images-for-home/fujiyama-img.avif";
+import FujiyamaPictureTwo from "@assets/images/images-for-home/fujiyama-second-img.avif";
+import ThailandOne from "@assets/images/images-for-home/thailand-one.avif";
+import ThailandTwo from "@assets/images/images-for-home/thailand-two.avif";
 import "./Destination.css";
 import { Typography, Box, useMediaQuery } from "@mui/material";
 import DestinationItem from "./DestinationTemplate";

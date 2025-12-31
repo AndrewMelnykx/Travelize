@@ -11,7 +11,7 @@ import {
   Button,
 } from "@mui/material";
 import { HotelDataItem } from "@store/types";
-import HotelImageSample from "@assets/images/cards-images/hotel-image.jpg";
+import HotelImageSample from "@assets/images/cards-images/hotel-image.avif";
 
 const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
   const isScreenSmall = useMediaQuery("(max-width:600px)");

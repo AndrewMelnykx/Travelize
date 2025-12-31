@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/hero";
-import ServiceImage from "../assets/images/service-image.jpg";
-import { FooterServices } from "../components/footers/FooterServices";
+import ServiceImage from "@assets/images/service-image.avif";
+import { FooterServices } from "@footers/FooterServices";
 
 const Service = () => {
   return (

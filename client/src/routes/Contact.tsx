@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/hero";
-import ContactImage from "../assets/images/contact-image.jpg";
-import { FooterContact } from "../components/footers/FooterContact";
+import ContactImage from "@assets/images/contact-image.avif";
+import { FooterContact } from "@footers/FooterContact";
 
 const Contact = () => {
   return (

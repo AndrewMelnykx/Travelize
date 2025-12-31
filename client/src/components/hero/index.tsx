@@ -68,10 +68,24 @@ const Hero: React.FC<HeroProps> = ({ imageLink, title, text, cName, buttonWrappe
         color="white"
         style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.7)" }}
       >
-        <Typography variant="h1" mb={2} className="hero-title">
+        <Typography
+          variant="h1"
+          mb={2}
+          sx={{
+            fontSize: { xs: "35px", md: "64px" },
+            mt: { xs: "1rem", md: 0 },
+          }}
+        >
           {title}
         </Typography>
-        <Typography variant="h4" mt={2} mb={0} className="hero-text">
+        <Typography
+          variant="h4"
+          mt={2}
+          mb={0}
+          sx={{
+            fontSize: { xs: "18px", md: "44px" },
+          }}
+        >
           {text}
         </Typography>
 

@@ -16,7 +16,9 @@
 @media screen and (max-width: 850px) {
   .hero-title {
     padding: 10px 20px;
-    font-size: 45px;
+    font-size: 25px;
+    margin-top: 20rem;
+    color: red;
   }
   .hero-text {
     font-size: 1.1rem;

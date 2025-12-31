@@ -1,6 +1,6 @@
-import Korea from "@assets/images/cards-images/korea-image.jpg";
-import London from "@assets/images/cards-images/london-image.jpg";
-import Mexico from "@assets/images/cards-images/mexico-image.jpg";
+import Korea from "@assets/images/cards-images/korea-image.avif";
+import London from "@assets/images/cards-images/london-image.avif";
+import Mexico from "@assets/images/cards-images/mexico-image.avif";
 const cardsData = [
   {
     id: 0,
