@@ -8,8 +8,8 @@ import {
 } from "@store/selectors/components-selectors";
 
 import { Box, useMediaQuery } from "@mui/material";
-import CustomSelect from "@custom-ui/Select";
-import CustomInput from "@custom-ui/Input";
+import CustomSelect from "@custom-ui/select";
+import CustomInput from "@custom-ui/input";
 import TravelAutocomplete from "./Autocomplete";
 import TravelFilterCustomButton from "./Button";
 
