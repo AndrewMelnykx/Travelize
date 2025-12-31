@@ -1,16 +1,12 @@
 import React from "react";
 import { useRef, useEffect, useState, FC } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import { Box, Typography } from "@mui/material";
-import "./Destination.css";
-import { DestinationItemProps } from "./types";
 
-const DestinationItem: FC<DestinationItemProps> = ({
-  title,
-  description,
-  imageOne,
-  imageTwo,
-}) => {
+import { Box, Typography } from "@mui/material";
+import { DestinationItemProps } from "./types";
+import "./index.css";
+
+const DestinationItem: FC<DestinationItemProps> = ({ title, description, imageOne, imageTwo }) => {
   const [inView, setInView] = useState(false);
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -34,13 +30,13 @@ const DestinationItem: FC<DestinationItemProps> = ({
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         if (entries[0].isIntersecting) {
           setInView(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (titleRef.current) {
@@ -60,11 +56,7 @@ const DestinationItem: FC<DestinationItemProps> = ({
         <Typography variant="h4" ref={titleRef} mb={5} padding={0}>
           {title}
         </Typography>
-        <Typography
-          variant="h6"
-          maxWidth={"500px"}
-          className="dest-description"
-        >
+        <Typography variant="h6" maxWidth={"500px"} className="dest-description">
           {description}
         </Typography>
       </Box>

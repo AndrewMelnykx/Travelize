@@ -8,4 +8,16 @@ const messages = {
   LOGIN_SUCCESS: "You have successfully logged in!",
 };
 
-export { symbolT, wordTimeInsteadT, DEBOUNCE_HERO_DELAY_MS, userToken, messages };
+const simpleRequestMessages = {
+  BAD_REQUEST: "Failed to fetch please try again later.",
+  SUCCESS_REQUEST: "Loaded successfully!",
+};
+
+export {
+  symbolT,
+  wordTimeInsteadT,
+  DEBOUNCE_HERO_DELAY_MS,
+  userToken,
+  messages,
+  simpleRequestMessages,
+};

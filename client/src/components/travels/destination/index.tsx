@@ -1,12 +1,13 @@
 import React from "react";
+import { Typography, Box, useMediaQuery } from "@mui/material";
+
+import DestinationItem from "./template";
 
 import FujiyamaPictureOne from "@assets/images/images-for-home/fujiyama-img.avif";
 import FujiyamaPictureTwo from "@assets/images/images-for-home/fujiyama-second-img.avif";
 import ThailandOne from "@assets/images/images-for-home/thailand-one.avif";
 import ThailandTwo from "@assets/images/images-for-home/thailand-two.avif";
-import "./Destination.css";
-import { Typography, Box, useMediaQuery } from "@mui/material";
-import DestinationItem from "./DestinationTemplate";
+import "./index.css";
 
 const Destination = () => {
   const isSmallScreen = useMediaQuery("(max-width: 850px)");
