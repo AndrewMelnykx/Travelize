@@ -8,12 +8,12 @@ import {
 } from "@store/selectors/components-selectors";
 
 import { Box, useMediaQuery } from "@mui/material";
-import CustomSelect from "@custom-ui/select";
+import CustomSelect from "@custom-ui/Select";
 import CustomInput from "@custom-ui/Input";
-import TravelAutocomplete from "./autocomplete";
+import TravelAutocomplete from "./Autocomplete";
+import TravelFilterCustomButton from "./Button";
 
 import TicketsAnimation from "../../../components/tickets-animation/TicketsAnimation";
-import TravelFilterCustomButton from "./button";
 import "react-toastify/dist/ReactToastify.css";
 
 const TravelPlanFilter = () => {

@@ -1,4 +1,4 @@
-import { DataHandlingTypes } from "@redux/types";
+import { DataHandlingTypes } from "@store/types";
 import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchCitySuggestionsArrivalThunk,
@@ -28,21 +28,18 @@ const DataSlice = createSlice({
       state.hotelsData = action.payload;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
-      .addCase(
-        fetchCitySuggestionsDepartureThunk.fulfilled,
-        (state, action) => {
-          state.departureInputData = action.payload;
-        }
-      )
+      .addCase(fetchCitySuggestionsDepartureThunk.fulfilled, (state, action) => {
+        state.departureInputData = action.payload;
+      })
       .addCase(fetchCitySuggestionsArrivalThunk.fulfilled, (state, action) => {
         state.arrivalInputData = action.payload;
       })
       .addCase(fetchHotelsDataThunk.fulfilled, (state, action) => {
         state.hotelsData = action.payload;
       })
-      .addCase(fetchHotelsDataThunk.rejected, (state) => {
+      .addCase(fetchHotelsDataThunk.rejected, state => {
         state.hotelsData = [];
       })
       .addCase(fetchTicketsDataThunk.fulfilled, (state, action) => {

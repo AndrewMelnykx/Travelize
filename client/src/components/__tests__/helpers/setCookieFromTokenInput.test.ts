@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { setCookieFromTokenInput } from "../../../helpers/helpers-funcs";
+import { setTokenInLocalStorage } from "../../../helpers/helpers-funcs";
 jest.mock("js-cookie");
 
 describe("setCookieFromTokenInput", () => {
@@ -8,7 +8,7 @@ describe("setCookieFromTokenInput", () => {
     const inputIdFromArray = "tokenInput";
     const value = "sampleToken";
 
-    setCookieFromTokenInput(inputId, inputIdFromArray, value);
+    setTokenInLocalStorage(inputId, inputIdFromArray, value);
 
     expect(Cookies.set).toHaveBeenCalledWith("userToken", value, {
       expires: 1,
@@ -20,9 +20,8 @@ describe("setCookieFromTokenInput", () => {
     const inputIdFromArray = "wrongInput";
     const value = "sampleToken";
 
-    setCookieFromTokenInput(inputId, inputIdFromArray, value);
+    setTokenInLocalStorage(inputId, inputIdFromArray, value);
 
     expect(Cookies.set).not.toHaveBeenCalled();
   });
 });
-reerge;

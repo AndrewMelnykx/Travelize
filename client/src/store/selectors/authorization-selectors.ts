@@ -1,4 +1,4 @@
-import { RootState } from "@redux/RootReducer";
+import { RootState } from "@store/RootReducer";
 
 const signUpModalSelector = (state: RootState) => state.authorization.isSignUpVisible;
 

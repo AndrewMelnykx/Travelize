@@ -1,4 +1,4 @@
-import TravelPlanFilter from "../filter/filter";
+import TravelPlanFilter from "../filter/Filter";
 
 import { Box, useMediaQuery } from "@mui/material";
 import { ToastContainer } from "react-toastify";

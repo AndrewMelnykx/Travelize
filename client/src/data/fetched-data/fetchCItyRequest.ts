@@ -2,13 +2,13 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 
-const baseForMovieSearch = process.env.VITE_TRAVEL_APP_CITY_SEARCH_BASE;
+const baseForCity = process.env.VITE_TRAVEL_APP_CITY_SEARCH_BASE;
 
 const fetchCitySuggestions = async (inputValue: string) => {
   const token = Cookies.get("userToken");
   try {
-    if (baseForMovieSearch) {
-      const response = await axios.get(baseForMovieSearch, {
+    if (baseForCity) {
+      const response = await axios.get(baseForCity, {
         params: {
           namePrefix: inputValue,
           limit: 10,
