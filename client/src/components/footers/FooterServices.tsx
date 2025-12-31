@@ -1,17 +1,18 @@
 import React from "react";
-import { Box } from "@mui/material";
-import { StyledTypography } from "@helpers/custom-elements";
-import "./Footer.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import Cookies from "js-cookie";
+
+import { Box } from "@mui/material";
+import { StyledTypography } from "@helpers/custom-elements";
+import { messages, userToken } from "@helpers/constants";
+import "./Footer.css";
 
 const FooterServices = () => {
   const navigate = useNavigate();
   const handleTicketAccess = () => {
-    const token = Cookies.get("userToken");
+    const token = localStorage.getItem(userToken);
     if (!token) {
-      toast.error("You need a token for this page.Please login or sign up !");
+      toast.error(messages.NOT_AUTHORIZED);
     } else {
       navigate("/travel-plan");
     }
@@ -42,10 +43,7 @@ const FooterServices = () => {
         Flights
       </StyledTypography>
       <StyledTypography variant="h3">
-        <Link
-          to={"/hotels"}
-          style={{ color: "inherit", textDecoration: "none" }}
-        >
+        <Link to={"/hotels"} style={{ color: "inherit", textDecoration: "none" }}>
           {" "}
           Hotels
         </Link>
@@ -57,10 +55,7 @@ const FooterServices = () => {
       </StyledTypography>
 
       <StyledTypography variant="h3">
-        <Link
-          to={"/#activities"}
-          style={{ color: "inherit", textDecoration: "none" }}
-        >
+        <Link to={"/#activities"} style={{ color: "inherit", textDecoration: "none" }}>
           Activities (tours, attractions)
         </Link>
       </StyledTypography>
