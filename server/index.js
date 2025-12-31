@@ -12,14 +12,15 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(
   cors({
-    origin: "https://travelize-frontend.onrender.com",
+    origin: ["https://travelize-frontend.onrender.com"],
     credentials: true,
-  })
+  }),
 );
 app.get("/api", (req, res) => {
   3;
   res.json({ message: "Hello from server!" });
 });
+app.options("*", cors());
 
 app.use("/hotels", routerHotel);
 app.use("/tickets", routerFlight);

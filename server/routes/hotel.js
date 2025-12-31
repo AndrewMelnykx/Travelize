@@ -41,14 +41,11 @@ routerHotel.get(
       });
       const cityCode = cityResponse.data[0].address.cityCode;
 
-      const hotelResponse =
-        await amadeus.referenceData.locations.hotels.byCity.get({
-          cityCode: cityCode,
-        });
+      const hotelResponse = await amadeus.referenceData.locations.hotels.byCity.get({
+        cityCode: cityCode,
+      });
 
-      let hotelIdsArr = hotelResponse.data
-        .slice(0, 30)
-        .map((hotel) => hotel.hotelId);
+      let hotelIdsArr = hotelResponse.data.slice(0, 30).map(hotel => hotel.hotelId);
 
       const hotelOffersResponse = await amadeus.shopping.hotelOffersSearch.get({
         hotelIds: hotelIdsArr.join(","),
@@ -58,11 +55,9 @@ routerHotel.get(
       res.json(hotelOffersResponse.data);
     } catch (error) {
       console.error("Error fetching hotels:", error);
-      res
-        .status(500)
-        .json({ message: "Error fetching hotels", error: error.message });
+      res.status(500).json({ message: "Error fetching hotels", error: error.message });
     }
-  }
+  },
 );
 
 export default routerHotel;
