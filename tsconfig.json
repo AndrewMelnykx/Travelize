@@ -17,9 +17,9 @@
     "paths": {
       "@data/*": ["client/src/data/*"],
       "@assets/*": ["client/src/assets/*"],
-      "@redux/*": ["client/src/components/redux/*"],
-      "@slices/*": ["client/src/components/redux/slices/*"],
-      "@selectors/*": ["client/src/components/redux/selectors/*"],
+      "@store/*": ["client/src/store/*"],
+      "@slices/*": ["client/src/store/slices/*"],
+      "@selectors/*": ["client/src/store/selectors/*"],
       "@helpers/*": ["client/src/helpers/*"],
       "@routes/*": ["client/src/routes/*"],
       "@footers/*": ["client/src/components/footers/*"],
