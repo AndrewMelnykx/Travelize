@@ -9,6 +9,7 @@ dotenv.config();
 
 const PORT = process.env.PORT || 3001;
 
+// http://localhost:5173/
 const app = express();
 app.use(
   cors({

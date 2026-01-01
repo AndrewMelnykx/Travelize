@@ -3,11 +3,10 @@ import { useSelector } from "react-redux";
 import { arrivalSelector, departureSelector } from "@store/selectors/components-selectors";
 import { TicketsDataItem } from "@store/types";
 
-import { Box, IconButton, Typography } from "@mui/material";
-import FmdBadIcon from "@mui/icons-material/FmdBad";
+import { Box, Typography } from "@mui/material";
 
-import TravelPlanPriceItem from "./priceItem";
 import { symbolT, wordTimeInsteadT } from "@helpers/constants";
+import FlightImage from "@assets/images/flight-card.png";
 
 const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({ ticket }) => {
   const cityArrival = useSelector(arrivalSelector);
@@ -24,47 +23,84 @@ const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({ ticket 
   return (
     <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
       <Box
-        position={"relative"}
-        display={"flex"}
-        width={"500px"}
-        height={"250px"}
-        sx={{ border: "1px solid white", borderRadius: "5px" }}
-        alignItems={"center"}
-        justifyContent={"center"}
+        position="relative"
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="center"
+        width={{ xs: "90%", sm: "90%", md: "420px" }}
+        height={{ xs: "90%", sm: "90%", md: "250px" }}
+        sx={{
+          borderRadius: "1.5rem",
+          overflow: "hidden",
+          backgroundColor: "#301934",
+          boxShadow: "#301934 0px 3px 8px;",
+        }}
+        mr={2}
       >
-        <IconButton
-          sx={{
-            width: "55px",
-            height: "55px",
-            background: "transparent",
-            position: "absolute",
-            top: "1px",
-            left: "0",
-          }}
+        <Box
+          component="img"
+          src={FlightImage}
+          alt="Example image"
+          sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+
+        <Box
+          display="flex"
+          position="absolute"
+          mb="5%"
+          flexDirection="column"
+          alignItems="flex-start"
+          justifyContent={"flex-start"}
         >
-          <FmdBadIcon
-            sx={{
-              background: "transparent",
-              color: "white",
-              width: "100%",
-              height: "100%",
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            position="absolute"
+            width={{
+              xs: "190%",
+              sm: "200%",
+              md: "225%",
             }}
-          />
-        </IconButton>
-        <Box display={"flex"} position={"absolute"} right={0} top={0} mb={"5%"}>
-          <Typography variant="h6" color={"white"}>
+            top={{
+              xs: "25%",
+              sm: "28%",
+              md: "30%",
+            }}
+            left={{
+              xs: "-40%",
+              sm: "-40%",
+              md: "-60%",
+            }}
+          >
+            <Typography color="white">{cityDeparture}</Typography>
+
+            <Typography color="white">{cityArrival}</Typography>
+          </Box>
+          <Typography color="white" mt={"10%"} fontSize={"15px"}>
             Arrival at :
-            <Typography variant="h6" color={"yellow"} sx={{ "&:hover": { color: "white" } }}>
+            <Typography
+              sx={{ "&:hover": { color: "white" } }}
+              mt={"2%"}
+              fontSize={"13px"}
+              color={"#40E0D0"}
+            >
               {ticketArrivalTime}
             </Typography>
           </Typography>
+          <Typography
+            color={"white"}
+            flexDirection={"column"}
+            mt={{ xs: "50%", sm: "60%", md: "65%" }}
+            fontSize={"15px"}
+            left={0}
+          >
+            Departure at :
+            <Typography color={"#40E0D0"} sx={{ "&:hover": { color: "white" } }} fontSize={"13px"}>
+              {ticketDepartureTime}
+            </Typography>
+          </Typography>
         </Box>
-        <TravelPlanPriceItem
-          ticketArrivalTime={ticketArrivalTime}
-          ticketDepartureTime={ticketDepartureTime}
-          cityArrival={cityArrival}
-          cityDeparture={cityDeparture}
-        />
       </Box>
     </Box>
   );

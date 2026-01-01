@@ -2,7 +2,7 @@ import { ticketsDataSelector } from "@store/selectors/data-selectors";
 import { useSelector } from "react-redux";
 import { Box, useMediaQuery, Typography } from "@mui/material";
 
-import TravelPlanCardTemplate from "./template";
+import TravelPlanCardTemplate from "./Template";
 import ErrorPage from "../pages/ErrorPage";
 
 const TravelPlanCards = () => {
@@ -22,7 +22,7 @@ const TravelPlanCards = () => {
       <Typography
         variant="h2"
         color={"Yellow"}
-        mt={isSmallScreen ? "35% " : "5%"}
+        mt={isSmallScreen ? "35% " : "4%"}
         sx={{
           "&:hover": {
             color: "white",
@@ -33,12 +33,15 @@ const TravelPlanCards = () => {
       </Typography>
       {ticketsData.length > 0 ? (
         <Box
-          display={"grid"}
-          gridTemplateColumns={"repeat(3,1fr)"}
+          display="grid"
+          gridTemplateColumns={{
+            xs: "1fr", // 📱 phone → column view
+            sm: "1fr 1fr", // tablet
+            md: "repeat(3, 1fr)", // desktop
+          }}
           rowGap={2}
           columnGap={2}
-          width={"100%"}
-          height={"100%"}
+          width="100%"
         >
           {ticketsData.map(ticket => (
             <TravelPlanCardTemplate ticket={ticket} key={ticket.id} />

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { hotelsDataSelector } from "@store/selectors/data-selectors";
 
-import CardTemplate from "./template";
-import HotelFilter from "./fitler";
+import CardTemplate from "./Template";
+import HotelFilter from "./Fitler";
 
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
