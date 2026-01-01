@@ -15,15 +15,14 @@ const TravelPlan = () => {
       height={"120vh"}
       flexDirection={"column"}
       sx={{ background: "black", padding: 0, margin: 0, position: "relative" }}
-      zIndex={"-1"}
+      zIndex={2}
     >
       <Box
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
         width={isSmallScreen ? "100%" : "50%"}
-        color={"white"}
-        mt={isSmallScreen ? "15%" : "5%"}
+        mt={isSmallScreen ? "10%" : "-1%"}
       >
         <TravelPlanFilter />
       </Box>

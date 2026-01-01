@@ -5,7 +5,7 @@ import { TicketsDataItem } from "@store/types";
 
 import { Box, Typography } from "@mui/material";
 
-import { symbolT, wordTimeInsteadT } from "@helpers/constants";
+import { darkPurpleColor, lightBlueColor, symbolT, wordTimeInsteadT } from "@helpers/constants";
 import FlightImage from "@assets/images/flight-card.png";
 
 const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({ ticket }) => {
@@ -32,8 +32,8 @@ const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({ ticket 
         sx={{
           borderRadius: "1.5rem",
           overflow: "hidden",
-          backgroundColor: "#301934",
-          boxShadow: "#301934 0px 3px 8px;",
+          backgroundColor: `${darkPurpleColor}`,
+          boxShadow: ` ${darkPurpleColor}0px 3px 8px;`,
         }}
         mr={2}
       >
@@ -83,7 +83,7 @@ const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({ ticket 
               sx={{ "&:hover": { color: "white" } }}
               mt={"2%"}
               fontSize={"13px"}
-              color={"#40E0D0"}
+              color={lightBlueColor}
             >
               {ticketArrivalTime}
             </Typography>
@@ -96,7 +96,11 @@ const TravelPlanCardTemplate: React.FC<{ ticket: TicketsDataItem }> = ({ ticket 
             left={0}
           >
             Departure at :
-            <Typography color={"#40E0D0"} sx={{ "&:hover": { color: "white" } }} fontSize={"13px"}>
+            <Typography
+              color={lightBlueColor}
+              sx={{ "&:hover": { color: "white" } }}
+              fontSize={"13px"}
+            >
               {ticketDepartureTime}
             </Typography>
           </Typography>

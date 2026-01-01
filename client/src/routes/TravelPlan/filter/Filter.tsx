@@ -9,12 +9,13 @@ import {
 
 import { Box, useMediaQuery } from "@mui/material";
 import CustomSelect from "@custom-ui/select";
-import CustomInput from "@custom-ui/Input";
+import CustomInput from "@custom-ui/input";
 import TravelAutocomplete from "./Autocomplete";
 import TravelFilterCustomButton from "./Button";
 
 import TicketsAnimation from "../../../components/tickets-animation/TicketsAnimation";
 import "react-toastify/dist/ReactToastify.css";
+import { darkPurpleColor } from "@helpers/constants";
 
 const TravelPlanFilter = () => {
   const isSmallScreen = useMediaQuery("(max-width: 850px)");
@@ -41,21 +42,22 @@ const TravelPlanFilter = () => {
       gap={10}
       alignItems={"center"}
       flexDirection={"column"}
+      sx={{ backgroundColor: `${darkPurpleColor}`, boxShadow: `${darkPurpleColor} 0px 3px 8px;` }}
+      borderRadius={"1rem"}
     >
-      <Box display="flex" width={"100%"} flexDirection={"column"} color={"inherit"}>
+      <Box display="flex" width={"90%"} flexDirection={"column"} color={"inherit"}>
         <Box display={"flex"} flexDirection={"column"} gap={1} width={"100%"} position={"relative"}>
           <TravelAutocomplete />
         </Box>
       </Box>
-      <Box display="flex" width={"100%"} flexDirection={"column"}>
+      <Box display="flex" width={"90%"} flexDirection={"column"}>
         <Box
           width={"100%"}
           height={"1%"}
           sx={{ background: "transparent" }}
           display={"flex"}
           alignSelf={"center"}
-          top={isSmallScreen ? "-15%" : "-20%"}
-          mb={isSmallScreen ? "-20%" : "-15%"}
+          mb={isSmallScreen ? "0" : "-15%"}
         >
           <TicketsAnimation />
         </Box>

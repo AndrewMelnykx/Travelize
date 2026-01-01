@@ -15,6 +15,9 @@ const simpleRequestMessages = {
   SUCCESS_REQUEST: "Loaded successfully!",
 };
 
+const darkPurpleColor = "#301934";
+const lightBlueColor = "#40E0D0";
+
 export const mockTicketsData: TicketsDataItem[] = [
   {
     id: "TICKET_001",
@@ -313,4 +316,6 @@ export {
   userToken,
   messages,
   simpleRequestMessages,
+  darkPurpleColor,
+  lightBlueColor,
 };
