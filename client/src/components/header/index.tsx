@@ -62,7 +62,7 @@ const Header = () => {
   };
 
   return (
-    <Box height={"100px"} position={"fixed"} width={"100%"}>
+    <Box height={"100px"} position={"fixed"} width={"100%"} zIndex={10}>
       <Paper
         className="header-paper"
         sx={{

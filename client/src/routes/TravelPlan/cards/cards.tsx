@@ -11,7 +11,7 @@ const TravelPlanCards = () => {
 
   return (
     <Box
-      zIndex={"10"}
+      zIndex={2}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"center"}
@@ -33,11 +33,12 @@ const TravelPlanCards = () => {
       </Typography>
       {ticketsData.length > 0 ? (
         <Box
+          zIndex={1}
           display="grid"
           gridTemplateColumns={{
-            xs: "1fr", // 📱 phone → column view
-            sm: "1fr 1fr", // tablet
-            md: "repeat(3, 1fr)", // desktop
+            xs: "1fr",
+            sm: "1fr 1fr",
+            md: "repeat(3, 1fr)",
           }}
           rowGap={2}
           columnGap={2}
