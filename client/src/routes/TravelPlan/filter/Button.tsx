@@ -64,8 +64,10 @@ const TravelFilterCustomButton: React.FC<TravelFilterCustomButtonProps> = ({
         loadingPosition="end"
         variant="contained"
         sx={{
-          backgroundColor: "white",
-          color: "black",
+          backgroundColor: "transparent",
+          color: "white",
+          border: "1px solid gold",
+          borderRadius: "2rem",
           "&:hover": {
             backgroundColor: "gray",
           },

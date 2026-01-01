@@ -4,6 +4,7 @@ import { Autocomplete, Typography, Grid, TextField } from "@mui/material";
 import { LocationOn } from "@mui/icons-material";
 import { City } from "@store/types";
 import { CustomAutocompleteProps } from "./types";
+import { darkPurpleColor } from "@helpers/constants";
 
 const CustomAutocomplete = ({
   handleChangeOfTheInput,
@@ -20,18 +21,31 @@ const CustomAutocomplete = ({
         marginTop: "2%",
         marginBottom: "5%",
         width: "100%",
-        border: "1px solid white",
+        border: "none",
         color: "white",
-        background: "black",
+        background: `${darkPurpleColor}`,
         "& .MuiAutocomplete-inputRoot": {
-          background: "black",
+          background: `${darkPurpleColor}`,
           color: "white",
         },
+
         "& .MuiAutocomplete-popupIndicator": {
           color: "white",
         },
         "& .MuiAutocomplete-endAdornment": {
           color: "white",
+        },
+        "& .MuiAutocomplete-paper": {
+          backgroundColor: darkPurpleColor,
+          color: "white",
+          borderRadius: "1rem",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+        },
+
+        "& .MuiAutocomplete-option": {
+          color: "white",
+          "&[aria-selected='true']": { backgroundColor: "#5a1a7e" },
+          "&:hover": { backgroundColor: "#6b2b9f" },
         },
       }}
       getOptionLabel={(option: City) => option.city}
@@ -55,32 +69,42 @@ const CustomAutocomplete = ({
           label={label}
           fullWidth
           sx={{
-            color: "white",
-            background: "black",
             "& .MuiInputLabel-root": {
               color: "white",
+              "&.Mui-focused": {
+                color: "white",
+              },
             },
-            "& .MuiInputBase-input": {
-              color: "white",
+            "& .MuiInputBase-input": { color: "white" },
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": { borderColor: "gold", borderRadius: "1rem" },
+              "&:hover fieldset": { borderColor: "gold" },
+              "&.Mui-focused fieldset": { borderColor: "gold" },
             },
           }}
         />
       )}
-      renderOption={(props, option) => {
-        const { key, ...optionProps } = props;
-
+      renderOption={(props, option, { selected }) => {
         return (
-          <li key={key} {...optionProps} style={{ background: "black" }}>
-            <Grid container sx={{ alignItems: "center", color: "white" }}>
+          <li {...props} style={{ padding: 0 }}>
+            <Grid
+              container
+              sx={{
+                alignItems: "center",
+                color: "white",
+                backgroundColor: selected ? "#5a1a7e" : darkPurpleColor,
+                "&:hover": {
+                  backgroundColor: "#6b2b9f",
+                },
+                px: 1,
+              }}
+            >
               <Grid item sx={{ display: "flex", width: 44 }}>
                 <LocationOn sx={{ color: "white" }} />
               </Grid>
               <Grid
                 item
-                sx={{
-                  width: "calc(100% - 44px)",
-                  wordWrap: "break-word",
-                }}
+                sx={{ width: "calc(100% - 44px)", wordWrap: "break-word", height: "100%" }}
               >
                 <Typography variant="body2" color="white">
                   {option.city}

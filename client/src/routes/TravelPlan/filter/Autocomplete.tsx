@@ -71,7 +71,7 @@ const TravelAutocomplete = () => {
       setCityArrival(selectedCity.city);
       dispatch(FilterSlice.actions.handleArrivalCityValue(selectedCity.city));
     }
-    console.log("Selected Arrival City:", selectedCity?.city);
+    // console.log("Selected Arrival City:", selectedCity?.city);
   };
   const handleInputChangeDeparture = (event: SyntheticEvent<Element, Event>) => {
     const newValue = (event.target as HTMLInputElement).value;

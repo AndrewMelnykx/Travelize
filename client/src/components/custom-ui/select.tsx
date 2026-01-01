@@ -7,6 +7,7 @@ import { FilterActions } from "@store/slices/filter-slice";
 
 import { Select, MenuItem, SelectChangeEvent, InputLabel, FormControl } from "@mui/material";
 import { adultsSelectOptionsData } from "@data/static-data/inputs-data";
+import { darkPurpleColor } from "@helpers/constants";
 
 const CustomSelect = ({ label, labelId }: { label: string; labelId: string }) => {
   const dispatch = UseStoreDispatcher();
@@ -17,57 +18,50 @@ const CustomSelect = ({ label, labelId }: { label: string; labelId: string }) =>
   };
 
   return (
-    <FormControl sx={{ marginTop: "10%", minWidth: 120 }}>
-      <InputLabel id="filter-select-label" sx={{ color: "white" }}>
+    <FormControl sx={{ mt: 2, width: "100%", position: "relative" }}>
+      <InputLabel
+        id={labelId}
+        sx={{
+          color: "white",
+          "&.Mui-focused": { color: "white" },
+        }}
+      >
         {label}
       </InputLabel>
+
       <Select
         labelId={labelId}
-        onChange={handleSettingAdults}
         value={selectAdultsState}
-        label={label}
+        onChange={handleSettingAdults}
         sx={{
-          mb: "2%",
-          borderBottom: "1px solid white",
-          fontSize: "1.1rem",
-          backgroundColor: "black",
+          backgroundColor: darkPurpleColor,
           color: "white",
-          "& .MuiSelect-icon": {
-            color: "white",
-          },
-          "& .MuiSelect-select": {
-            color: "white",
-          },
-          "& .MuiInputLabel-root": {
-            color: "white",
-          },
+          borderRadius: "1rem",
+          fontSize: "1.1rem",
+          "& .MuiSelect-select": { color: "white", padding: "10px" },
+          "& .MuiOutlinedInput-notchedOutline": { borderColor: "gold" },
+          "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "gold" },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "gold" },
+          "& .MuiSelect-icon": { color: "white" },
         }}
         MenuProps={{
           PaperProps: {
             sx: {
-              backgroundColor: "black",
+              backgroundColor: darkPurpleColor,
               color: "white",
+              borderRadius: "1rem",
               "& .MuiMenuItem-root": {
                 color: "white",
-                backgroundColor: "black",
-                "&:hover": {
-                  backgroundColor: "gray",
-                },
+                backgroundColor: darkPurpleColor,
+                "&:hover": { backgroundColor: "#6b2b9f" },
+                "&.Mui-selected": { backgroundColor: "#5a1a7e" },
               },
             },
           },
         }}
       >
         {adultsSelectOptionsData.map(item => (
-          <MenuItem
-            key={item.id}
-            value={item.value}
-            sx={{
-              fontSize: "1.5rem",
-              background: "inherit",
-              color: "white",
-            }}
-          >
+          <MenuItem key={item.id} value={item.value}>
             {item.label}
           </MenuItem>
         ))}
