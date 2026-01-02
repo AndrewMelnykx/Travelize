@@ -14,11 +14,9 @@ export default defineConfig({
     outDir: "client/dist",
   },
   base: "/",
-  // base: "/",
 
   resolve: {
     alias: {
-      "@data": path.resolve(__dirname, "client/src/data"),
       "@assets": path.resolve(__dirname, "client/src/assets"),
       "@store": path.resolve(__dirname, "client/src/store"),
       "@slices": path.resolve(__dirname, "client/src/store/slices"),

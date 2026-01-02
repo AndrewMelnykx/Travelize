@@ -42,7 +42,10 @@ const TravelPlanFilter = () => {
       gap={10}
       alignItems={"center"}
       flexDirection={"column"}
-      sx={{ backgroundColor: `${darkPurpleColor}`, boxShadow: `${darkPurpleColor} 0px 3px 8px;` }}
+      sx={{
+        backgroundColor: `${darkPurpleColor}`,
+        boxShadow: `${darkPurpleColor} 5px 10px 10px;`,
+      }}
       borderRadius={"1rem"}
     >
       <Box display="flex" width={"90%"} flexDirection={"column"} color={"inherit"}>

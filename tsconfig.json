@@ -15,7 +15,6 @@
     "types": ["node", "jest", "@testing-library/jest-dom"],
 
     "paths": {
-      "@data/*": ["client/src/data/*"],
       "@assets/*": ["client/src/assets/*"],
       "@store/*": ["client/src/store/*"],
       "@slices/*": ["client/src/store/slices/*"],
