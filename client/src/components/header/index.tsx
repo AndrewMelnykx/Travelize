@@ -13,15 +13,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { NavBar } from "@custom-ui/nav-bar";
 import CustomModal from "@modals/index";
-import { signUpInputs, loginInputs, tokenInputId } from "@data/static-data/inputs-data";
+import { CustomInputProps } from "@modals/types";
+import { signUpInputs, loginInputs, tokenInputId } from "@helpers/cards-constants";
 import { setTokenInLocalStorage } from "@helpers/helpers-funcs";
 
 import "./index.css";
 
 const Header = () => {
   const closeIconVisibility = useSelector(isCloseIconSelector);
-  const [inputsSignUp, setInputsSignUp] = useState(signUpInputs);
-  const [inputsLogin, setInputsLogin] = useState(loginInputs);
+  const [inputsSignUp, setInputsSignUp] = useState<CustomInputProps[]>(signUpInputs);
+  const [inputsLogin, setInputsLogin] = useState<CustomInputProps[]>(loginInputs);
 
   const isScreenSmall = useMediaQuery("(max-width:850px)");
   const signUpState = useSelector(signUpModalSelector);

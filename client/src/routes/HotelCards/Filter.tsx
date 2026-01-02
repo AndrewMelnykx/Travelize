@@ -1,6 +1,6 @@
 import React from "react";
 import { Paper, Box, FormControl, InputLabel } from "@mui/material";
-import CustomInput from "@custom-ui/Input";
+import CustomInput from "@custom-ui/input";
 import CustomSelect from "@custom-ui/select";
 import LoadingButtonsTransition from "@custom-ui/button";
 

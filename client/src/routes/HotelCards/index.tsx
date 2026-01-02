@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { hotelsDataSelector } from "@store/selectors/data-selectors";
 
 import CardTemplate from "./Template";
-import HotelFilter from "./Fitler";
+import HotelFilter from "./Filter";
 
 import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
