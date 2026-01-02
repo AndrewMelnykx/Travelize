@@ -8,6 +8,7 @@ import {
 } from "@store/selectors/components-selectors";
 
 import { Box, useMediaQuery } from "@mui/material";
+import { darkPurpleColor } from "@helpers/constants";
 import CustomSelect from "@custom-ui/select";
 import CustomInput from "@custom-ui/input";
 import TravelAutocomplete from "./Autocomplete";
@@ -15,7 +16,6 @@ import TravelFilterCustomButton from "./Button";
 
 import TicketsAnimation from "../../../components/tickets-animation/TicketsAnimation";
 import "react-toastify/dist/ReactToastify.css";
-import { darkPurpleColor } from "@helpers/constants";
 
 const TravelPlanFilter = () => {
   const isSmallScreen = useMediaQuery("(max-width: 850px)");

@@ -6,7 +6,7 @@ import { adultsSelector } from "@store/selectors/components-selectors";
 import { FilterActions } from "@store/slices/filter-slice";
 
 import { Select, MenuItem, SelectChangeEvent, InputLabel, FormControl } from "@mui/material";
-import { adultsSelectOptionsData } from "@data/static-data/inputs-data";
+import { adultsSelectOptionsData } from "@helpers/cards-constants";
 import { darkPurpleColor } from "@helpers/constants";
 
 const CustomSelect = ({ label, labelId }: { label: string; labelId: string }) => {

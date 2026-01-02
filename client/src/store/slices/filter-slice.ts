@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { FilterHandlingType } from "@store/types";
-import { adultsSelectOptionsData } from "@data/static-data/inputs-data";
+import { adultsSelectOptionsData } from "@helpers/cards-constants";
 
 const initialState: FilterHandlingType = {
   adultsOptionsSelect: adultsSelectOptionsData,
