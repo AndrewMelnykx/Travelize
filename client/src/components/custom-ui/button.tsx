@@ -9,6 +9,7 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import Box from "@mui/material/Box";
 import SendIcon from "@mui/icons-material/Send";
 import { toast } from "react-toastify";
+import { darkPurpleColor } from "@helpers/constants";
 
 export default function LoadingButtonsTransition({ city }: { city: string }) {
   const [loading, setLoading] = React.useState(false);
@@ -37,7 +38,7 @@ export default function LoadingButtonsTransition({ city }: { city: string }) {
   }
 
   return (
-    <Box sx={{ "& > button": { m: 1 } }} ml={10}>
+    <Box sx={{ "& > button": { m: 1 }, mt: { sm: 3, md: 1 }, mb: { sm: 2, md: -4 } }}>
       <LoadingButton
         onClick={handleClick}
         endIcon={<SendIcon />}
@@ -45,14 +46,19 @@ export default function LoadingButtonsTransition({ city }: { city: string }) {
         loadingPosition="end"
         variant="contained"
         sx={{
-          backgroundColor: "white",
-          color: "black",
+          backgroundColor: "transparent",
+          color: "white",
+          boxShadow: "1px 1px 1px 1px black",
+          fontSize: "1rem",
+          width: { md: "10rem", sm: "8rem" },
           "&:hover": {
-            backgroundColor: "gray",
+            backgroundColor: "transparent",
+            color: "gold",
           },
           "&.MuiLoadingButton-loading": {
             backgroundColor: "gray",
             color: "black",
+            boxShadow: "0.5px 0.5px 0.5px 0.5px black",
           },
         }}
       >

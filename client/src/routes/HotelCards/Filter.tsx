@@ -1,8 +1,9 @@
 import React from "react";
-import { Paper, Box, FormControl, InputLabel } from "@mui/material";
+import { Paper, Box, FormControl, InputLabel, Typography } from "@mui/material";
 import CustomInput from "@custom-ui/Input";
 import CustomSelect from "@custom-ui/select";
 import LoadingButtonsTransition from "@custom-ui/button";
+import { darkPurpleColor } from "@helpers/constants";
 
 const HotelFilter = ({
   city,
@@ -13,27 +14,46 @@ const HotelFilter = ({
 }) => {
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent={"center"}
-      height={"400px"}
-      width={"300px"}
-      gap={2}
-      mb={4}
-      mr={2}
-      ml={1}
-      sx={{ background: "black" }}
+      sx={{
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        ml: { xs: 4, md: 0 },
+      }}
     >
       <Paper
         sx={{
-          height: "100%",
-          width: "100%",
-          background: "black",
-          boxShadow: "rgba(255, 255, 255, 0.7) 0px 3px 8px",
+          height: {
+            xs: "40%",
+            sm: "90%",
+            md: "50%",
+          },
+          width: {
+            xs: "90%",
+            sm: "90%",
+            md: "30%",
+          },
+          background: `${darkPurpleColor}`,
+          boxShadow: "1px 1px 1px 1px black",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          borderRadius: "2rem",
         }}
       >
-        <Box ml={1}>
+        <Typography variant="h4" color={"white"} mb={1}>
+          Search params :
+        </Typography>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          width={"60%"}
+        >
           <CustomInput
             id="city-input"
             type="string"
