@@ -52,7 +52,6 @@ const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
             </Typography>
             <Box display={"flex"}>
               <Typography variant="h6"> Beds: {beds}</Typography>
-              {/* <Box display={"flex"} width={"100%"}> */}
               <Typography variant="h6" sx={{ marginLeft: "5%" }}>
                 {" "}
                 Guests: {guests}
