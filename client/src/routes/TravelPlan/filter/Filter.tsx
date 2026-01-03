@@ -9,8 +9,8 @@ import {
 
 import { Box, useMediaQuery } from "@mui/material";
 import { darkPurpleColor } from "@helpers/constants";
-import CustomSelect from "@custom-ui/select";
-import CustomInput from "@custom-ui/input";
+import CustomSelect from "@custom-ui/Select";
+import CustomInput from "@custom-ui/Input";
 import TravelAutocomplete from "./Autocomplete";
 import TravelFilterCustomButton from "./Button";
 

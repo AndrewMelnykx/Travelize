@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import TravelPlanCards from "../cards/Cards";
+import TravelPlanCards from "../../../routes/TravelPlan/cards/Cards";
 
 const TicketsPage = () => {
   return (

@@ -10,7 +10,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 import { Box } from "@mui/material";
-import CustomInput from "@custom-ui/input";
+import CustomInput from "@custom-ui/Input";
 import { ModalProps } from "./types";
 
 const CustomModal = ({
