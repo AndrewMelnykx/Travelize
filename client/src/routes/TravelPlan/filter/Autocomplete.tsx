@@ -14,10 +14,9 @@ import {
 import { City } from "@store/types";
 
 import { Box, debounce, useMediaQuery } from "@mui/material";
-import CustomAutocomplete from "@custom-ui/Autocomplete";
+import CustomAutocomplete from "@custom-ui/autocomplete";
 import { toast } from "react-toastify";
-
-//.adsadsdasas
+//.adsadsdasasasdd
 
 const TravelAutocomplete = () => {
   const [cityArrival, setCityArrival] = useState<string>("");
