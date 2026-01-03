@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 
 import { Box } from "@mui/material";
-import { StyledTypography } from "@helpers/custom-elements";
 import { messages, userToken } from "@helpers/constants";
 import "./Footer.css";
 
@@ -20,7 +19,8 @@ const FooterServices = () => {
 
   return (
     <Box
-      padding={"4rem 6rem"}
+      className="footer-container"
+      padding="4rem 6rem"
       sx={{
         background: "black",
         color: "white",
@@ -32,33 +32,26 @@ const FooterServices = () => {
       }}
     >
       <ToastContainer />
-      <StyledTypography
-        variant="h3"
-        onClick={handleTicketAccess}
-        style={{
-          textDecoration: "none",
-          fontFamily: "Jua, sans-serif",
-        }}
-      >
-        Flights
-      </StyledTypography>
-      <StyledTypography variant="h3">
-        <Link to={"/hotels"} style={{ color: "inherit", textDecoration: "none" }}>
-          {" "}
-          Hotels
-        </Link>
-      </StyledTypography>
-      <StyledTypography variant="h3">
-        <Link to={"/"} style={{ color: "inherit", textDecoration: "none" }}>
-          Car rentals
-        </Link>
-      </StyledTypography>
+      <ul className="services-list"></ul>
+      <ul className="services-list">
+        <li onClick={handleTicketAccess}>
+          <Link to="/" onClick={e => e.preventDefault()}>
+            Flights
+          </Link>
+        </li>
 
-      <StyledTypography variant="h3">
-        <Link to={"/#activities"} style={{ color: "inherit", textDecoration: "none" }}>
-          Activities (tours, attractions)
-        </Link>
-      </StyledTypography>
+        <li>
+          <Link to="/hotels">Hotels</Link>
+        </li>
+
+        <li>
+          <Link to="/">Car rentals</Link>
+        </li>
+
+        <li>
+          <Link to="/#activities">Activities </Link>
+        </li>
+      </ul>
     </Box>
   );
 };

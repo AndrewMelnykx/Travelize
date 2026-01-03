@@ -31,16 +31,5 @@ const StyledTextField = styled(TextField)(() => ({
     color: "white",
   },
 }));
-const StyledTypography = styled(Typography)(() => ({
-  color: "white",
-  cursor: "pointer",
 
-  "&:hover": {
-    width: "100%",
-    backgroundColor: "white",
-    color: "black",
-    textAlign: "center",
-  },
-}));
-
-export { StyledTextField, StyledTypography };
+export { StyledTextField };
