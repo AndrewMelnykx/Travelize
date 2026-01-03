@@ -37,14 +37,13 @@ const TravelPlanFilter = () => {
     <Box
       display={"flex"}
       alignSelf={"center"}
-      ml={5}
       width={"80%"}
       gap={10}
       alignItems={"center"}
       flexDirection={"column"}
       sx={{
         backgroundColor: `${darkPurpleColor}`,
-        boxShadow: `${darkPurpleColor} 5px 10px 10px;`,
+        boxShadow: ` 1px 1px 1px 1px black`,
       }}
       borderRadius={"1rem"}
     >

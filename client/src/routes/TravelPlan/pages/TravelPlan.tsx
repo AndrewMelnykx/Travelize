@@ -1,12 +1,10 @@
 import TravelPlanFilter from "../filter/Filter";
 
-import { Box, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const TravelPlan = () => {
-  const isSmallScreen = useMediaQuery("(max-width: 850px)");
-
   return (
     <Box
       display={"flex"}
@@ -16,13 +14,14 @@ const TravelPlan = () => {
       flexDirection={"column"}
       sx={{ background: "black", padding: 0, margin: 0, position: "relative" }}
       zIndex={2}
+      width={"100%"}
     >
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
-        width={isSmallScreen ? "100%" : "50%"}
-        mt={isSmallScreen ? "10%" : "-1%"}
+        width={{ xs: "100%", md: "50%" }}
+        mt={{ xs: "10%", md: "-1%" }}
       >
         <TravelPlanFilter />
       </Box>

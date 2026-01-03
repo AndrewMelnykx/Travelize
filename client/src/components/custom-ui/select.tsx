@@ -38,10 +38,19 @@ const CustomSelect = ({ label, labelId }: { label: string; labelId: string }) =>
           color: "white",
           borderRadius: "1rem",
           fontSize: "1.1rem",
-          "& .MuiSelect-select": { color: "white", padding: "10px" },
-          "& .MuiOutlinedInput-notchedOutline": { borderColor: "gold" },
-          "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "gold" },
-          "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "gold" },
+          "& .MuiSelect-select": {
+            color: "white",
+            padding: "10px",
+            boxShadow: "1px 1px 1px 1px black",
+          },
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "transparent",
+          },
+          "&:hover .MuiSelect-select": {
+            boxShadow: "0.5px 0.5px 0.5px 0.5px black",
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "transparent" },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "transparent" },
           "& .MuiSelect-icon": { color: "white" },
         }}
         MenuProps={{

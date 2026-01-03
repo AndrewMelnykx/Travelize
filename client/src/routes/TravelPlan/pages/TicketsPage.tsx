@@ -7,9 +7,10 @@ const TicketsPage = () => {
       height={"200vh"}
       sx={{ background: "black" }}
       display={"flex"}
-      alignItems={"flex-start"}
+      alignItems={"center"}
       justifyContent={"center"}
       zIndex={-1}
+      width={"100%"}
     >
       <Box mt={"5%"}>
         <TravelPlanCards />

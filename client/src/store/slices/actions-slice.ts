@@ -96,15 +96,6 @@ const fetchTicketsDataThunk = createAsyncThunk(
     returnDate: string;
     adults: string;
   }) => {
-    // const response = await fetchTickets(
-    //   departureCity,
-    //   arrivalCity,
-    //   departureDate,
-    //   returnDate,
-    //   adults,
-    // );
-    // const limitedResponse = response.slice(0, 12);
-    // return limitedResponse;
     if (baseForTickets) {
       try {
         const response = await axios.get(baseForTickets, {
@@ -118,7 +109,7 @@ const fetchTicketsDataThunk = createAsyncThunk(
           withCredentials: true,
         });
 
-        const limitedResponse = response.data.slice(0, 12);
+        const limitedResponse = response.data.slice(0, 6);
         return limitedResponse;
       } catch (error) {
         console.error("Error fetching tickets:", error);

@@ -56,20 +56,22 @@ const TravelFilterCustomButton: React.FC<TravelFilterCustomButtonProps> = ({
     handleTicketsFetching();
   };
   return (
-    <Box sx={{ "& > button": { m: 1 }, mt: "-15%" }}>
+    <Box display="flex" justifyContent="center" width="30%" mt={{ xs: "-20%", md: "-15%" }} mb={1}>
       <LoadingButton
+        fullWidth
         onClick={handleClick}
         endIcon={<SendIcon />}
         loading={loading}
         loadingPosition="end"
         variant="contained"
         sx={{
+          boxShadow: " 1px 1px 1px 1px black",
           backgroundColor: "transparent",
           color: "white",
-          border: "1px solid gold",
+          border: "none",
           borderRadius: "2rem",
           "&:hover": {
-            backgroundColor: "gray",
+            backgroundColor: "transparent",
           },
           "&.MuiLoadingButton-loading": {
             backgroundColor: "gray",
@@ -77,7 +79,7 @@ const TravelFilterCustomButton: React.FC<TravelFilterCustomButtonProps> = ({
           },
         }}
       >
-        <span>Search</span>
+        Search
       </LoadingButton>
     </Box>
   );

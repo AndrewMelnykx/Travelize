@@ -1,9 +1,8 @@
 import React, { SyntheticEvent } from "react";
-import { Autocomplete, Typography, Grid, TextField } from "@mui/material";
-////Commit
-//.
 
+import { Autocomplete, Typography, Grid, TextField } from "@mui/material";
 import { LocationOn } from "@mui/icons-material";
+
 import { City } from "@store/types";
 import { CustomAutocompleteProps } from "./types";
 import { darkPurpleColor } from "@helpers/constants";
@@ -79,9 +78,16 @@ const CustomAutocomplete = ({
             },
             "& .MuiInputBase-input": { color: "white" },
             "& .MuiOutlinedInput-root": {
-              "& fieldset": { borderColor: "gold", borderRadius: "1rem" },
-              "&:hover fieldset": { borderColor: "gold" },
-              "&.Mui-focused fieldset": { borderColor: "gold" },
+              "& fieldset": {
+                borderColor: "none",
+                borderRadius: "1rem",
+                boxShadow: "1px 1px 1px 1px black",
+              },
+              "&:hover fieldset": {
+                borderColor: "transparent",
+                boxShadow: "0.7px  0.7px 0.7px 0.7px black",
+              },
+              "&.Mui-focused fieldset": { borderColor: "transparent" },
             },
           }}
         />
