@@ -14,7 +14,7 @@ import {
 import { City } from "@store/types";
 
 import { Box, debounce, useMediaQuery } from "@mui/material";
-import CustomAutocomplete from "@custom-ui/autocomplete";
+import CustomAutocomplete from "@custom-ui/Autocomplete";
 import { toast } from "react-toastify";
 
 const TravelAutocomplete = () => {

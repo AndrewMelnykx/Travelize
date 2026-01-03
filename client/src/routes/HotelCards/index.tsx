@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { hotelsDataSelector } from "@store/selectors/data-selectors";
 
-import CardTemplate from "./Template";
+import CardTemplate from "./template";
 import HotelFilter from "./Filter";
 
 import { Box } from "@mui/material";
