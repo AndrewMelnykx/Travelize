@@ -56,7 +56,7 @@ const TravelFilterCustomButton: React.FC<TravelFilterCustomButtonProps> = ({
     handleTicketsFetching();
   };
   return (
-    <Box sx={{ "& > button": { m: 1 }, mt: "-24%", mb: "2%" }}>
+    <Box sx={{ "& > button": { m: 1 }, mt: "-15%" }}>
       <LoadingButton
         onClick={handleClick}
         endIcon={<SendIcon />}

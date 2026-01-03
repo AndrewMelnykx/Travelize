@@ -12,6 +12,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { Box } from "@mui/material";
 import CustomInput from "@custom-ui/Input";
 import { ModalProps } from "./types";
+import { darkPurpleColor } from "@helpers/constants";
 
 const CustomModal = ({
   modalTitle,
@@ -37,7 +38,7 @@ const CustomModal = ({
         onClose={handleClosing}
         PaperProps={{
           sx: {
-            background: "black",
+            background: `${darkPurpleColor}`,
             widows: "65%",
             borderRadius: "20px",
             boxShadow: "20px 25px 25px rgba(0,0,0,0.5)",
@@ -48,7 +49,7 @@ const CustomModal = ({
       >
         <DialogTitle
           style={{
-            background: "black",
+            background: "inherit",
             color: "white",
             alignSelf: "center",
             fontSize: "2.1rem",
@@ -56,8 +57,8 @@ const CustomModal = ({
         >
           {modalTitle}
         </DialogTitle>
-        <DialogContent style={{ background: "black", color: "white", borderRadius: "15px" }}>
-          <DialogContentText>{textTitle}</DialogContentText>
+        <DialogContent style={{ background: "inherit", color: "white", borderRadius: "15px" }}>
+          <DialogContentText color={"white"}>{textTitle}</DialogContentText>
           {inputs.map(input => (
             <CustomInput
               key={input.id}
@@ -70,11 +71,11 @@ const CustomModal = ({
             />
           ))}
         </DialogContent>
-        <DialogContentText ml={3} style={{ background: "black", color: "white" }}>
+        <DialogContentText ml={3} style={{ background: "inherit", color: "white" }}>
           {textReminder}
         </DialogContentText>
         <DialogActions
-          style={{ background: "black", color: "white" }}
+          style={{ background: "inherit", color: "white" }}
           sx={{ display: "flex", justifyContent: "space-between" }}
         >
           {loginState ? null : (

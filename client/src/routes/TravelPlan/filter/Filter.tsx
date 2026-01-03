@@ -38,7 +38,7 @@ const TravelPlanFilter = () => {
       display={"flex"}
       alignSelf={"center"}
       ml={5}
-      width={"50%"}
+      width={"80%"}
       gap={10}
       alignItems={"center"}
       flexDirection={"column"}
