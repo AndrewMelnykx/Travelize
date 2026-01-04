@@ -6,12 +6,12 @@ import {
   fetchHotelsDataThunk,
   fetchTicketsDataThunk,
 } from "./actions-slice";
-import { mockTicketsData } from "@helpers/constants";
+import { mockHotels, mockTicketsData } from "@helpers/constants";
 
 const initialState: DataHandlingTypes = {
   departureInputData: [],
   arrivalInputData: [],
-  hotelsData: [],
+  hotelsData: mockHotels,
   ticketsData: mockTicketsData,
 };
 

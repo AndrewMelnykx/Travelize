@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { HotelDataItem } from "@store/types";
 import HotelImageSample from "@assets/images/cards-images/hotel-image.avif";
+import { darkPurpleColor } from "@helpers/constants";
 
 const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
   const isScreenSmall = useMediaQuery("(max-width:600px)");
@@ -23,54 +24,96 @@ const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
   return (
     <Paper
       sx={{
-        boxShadow: "rgba(255, 255, 255, 0.7) 0px 3px 8px",
+        boxShadow: "5px 5px 5px 5px black",
+        borderRadius: "2rem",
+        p: "6% 0 0.3rem 0",
+        background: `${darkPurpleColor}`,
       }}
     >
       <Card
         sx={{
-          width: `${isScreenSmall ? "200px" : "400px"}`,
-          background: "black",
+          width: { sx: "50px", md: "280px" },
           color: "white",
+          background: "transparent",
+          height: { sx: "50px", md: "280px" },
         }}
       >
-        <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          mb={1}
+        >
+          <Typography
+            sx={{
+              fontSize: "0.8rem",
+              color: "grey",
+              mb: 0.5,
+            }}
+          >
+            Hotel image sample*
+          </Typography>
+
           <CardMedia
-            component={"img"}
-            sx={{ width: "100%", margin: "0" }}
+            component="img"
+            sx={{
+              width: "70%",
+              borderRadius: "0.5rem",
+              boxShadow: "1px 1px 1px 1px black",
+            }}
             image={HotelImageSample}
             alt={hotel.hotel.name}
-            height={"100%"}
           />
         </Box>
 
-        <Box display={"flex"} flexDirection={"column"} maxHeight={"200px"} minHeight={"200px"}>
-          <CardContent sx={{ height: "100%" }}>
-            <Typography sx={{ fontSize: "0.8rem" }}>Hotel image sample*</Typography>
-            <Typography variant="h5"> {hotel.hotel.name}</Typography>
-            <Typography variant="h6">
-              Price per night: {hotelPrices} {currency}
-            </Typography>
-            <Box display={"flex"}>
-              <Typography variant="h6"> Beds: {beds}</Typography>
-              <Typography variant="h6" sx={{ marginLeft: "5%" }}>
+        <Box display={"flex"} flexDirection={"column"}>
+          <CardContent
+            sx={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box display={"flex"} flexDirection={"column"} alignItems={"flex-start"}>
+              <Typography variant="h5" mt={-2}>
                 {" "}
-                Guests: {guests}
+                {hotel.hotel.name}
               </Typography>
-              <Button
-                sx={{
-                  ml: "5%",
-                  color: "black",
-                  background: "white",
-                  "&:hover": {
-                    background: "gray",
-                    color: "black",
-                  },
-                }}
-              >
-                Book
-              </Button>
+              <Typography variant="h6" mt={-1}>
+                Price per night: {hotelPrices} {currency}
+              </Typography>
+              <Box display="flex" flexDirection="row" alignItems="center" gap={4} flexWrap="nowrap">
+                <Typography variant="h6" noWrap mt={-1}>
+                  Beds: {beds}
+                </Typography>
+
+                <Typography variant="h6" noWrap mt={-1}>
+                  Guests: {guests}
+                </Typography>
+              </Box>
             </Box>
           </CardContent>
+          <Button
+            sx={{
+              width: "65%",
+              alignSelf: "center",
+              mt: "-6%",
+              color: "white",
+              background: "transparent",
+              boxShadow: "2px 2px 2px 2px black",
+              "&:hover": {
+                background: "transparent",
+                color: "gold",
+                boxShadow: "0.5px 0.5px 0.5px 0.5px black",
+                fontWeight: "Bold",
+              },
+            }}
+          >
+            Book
+          </Button>
         </Box>
       </Card>
     </Paper>

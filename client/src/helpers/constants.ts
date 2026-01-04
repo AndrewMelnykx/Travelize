@@ -1,4 +1,4 @@
-import { TicketsDataItem } from "@store/types";
+import { HotelDataItem, TicketsDataItem } from "@store/types";
 
 const symbolT = "T";
 const wordTimeInsteadT = " Time ";
@@ -51,259 +51,474 @@ export const mockTicketsData: TicketsDataItem[] = [
       },
     ],
   },
+];
+const mockHotels: HotelDataItem[] = [
   {
-    id: "TICKET_002",
-    instantTicketingRequired: false,
-    isUpsellOffer: true,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC01",
+      cityCode: "NYC",
+      dupeId: "D001",
+      hotelId: "H001",
+      latitude: 40.7128,
+      longitude: -74.006,
+      name: "Grand Central Hotel",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT5H15M",
-        segments: [
-          {
-            id: "SEG_002",
-            number: "455",
-            carrierCode: "UA",
-            duration: "PT5H15M",
-            numberOfStops: 0,
-            blacklistedInEU: false,
-            aircraft: { code: "320" },
-            departure: {
-              iataCode: "LAX",
-              terminal: "7",
-              at: "2026-03-02T09:00:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "10" },
+        guests: { adults: 2 },
+        id: "O001",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Free cancellation up to 24 hours before check-in" },
+              type: "FREE_CANCELLATION",
             },
-            arrival: {
-              iataCode: "DEN",
-              terminal: "B",
-              at: "2026-03-02T12:15:00",
-            },
-            operating: { carrierCode: "UA" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Prepaid",
+        price: {
+          base: "200.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "20.00", currency: "USD", included: true }],
+          total: "220.00",
+        },
+        rateCode: "RC01",
+        rateFamilyEstimated: { code: "EST01", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Standard double room with city view" },
+          type: "DOUBLE",
+          typeEstimated: { bedType: "DOUBLE", beds: 1, category: "STANDARD" },
+        },
+        self: "/offers/O001",
+        variations: {
+          average: { base: "200.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "100.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "120.00" },
+          ],
+        },
       },
     ],
   },
   {
-    id: "TICKET_003",
-    instantTicketingRequired: true,
-    isUpsellOffer: false,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC02",
+      cityCode: "NYC",
+      dupeId: "D002",
+      hotelId: "H002",
+      latitude: 40.73061,
+      longitude: -73.935242,
+      name: "Riverside Inn",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT7H45M",
-        segments: [
-          {
-            id: "SEG_003",
-            number: "890",
-            carrierCode: "DL",
-            duration: "PT7H45M",
-            numberOfStops: 0,
-            blacklistedInEU: false,
-            aircraft: { code: "763" },
-            departure: {
-              iataCode: "SFO",
-              terminal: "2",
-              at: "2026-03-03T07:30:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "12" },
+        guests: { adults: 2 },
+        id: "O002",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Non-refundable" },
+              type: "NON_REFUNDABLE",
             },
-            arrival: {
-              iataCode: "JFK",
-              terminal: "4",
-              at: "2026-03-03T15:15:00",
-            },
-            operating: { carrierCode: "DL" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Pay at hotel",
+        price: {
+          base: "150.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "15.00", currency: "USD", included: true }],
+          total: "165.00",
+        },
+        rateCode: "RC02",
+        rateFamilyEstimated: { code: "EST02", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Cozy room with river view" },
+          type: "TWIN",
+          typeEstimated: { bedType: "TWIN", beds: 2, category: "STANDARD" },
+        },
+        self: "/offers/O002",
+        variations: {
+          average: { base: "150.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "80.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "85.00" },
+          ],
+        },
       },
     ],
   },
   {
-    id: "TICKET_004",
-    instantTicketingRequired: false,
-    isUpsellOffer: false,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC03",
+      cityCode: "NYC",
+      dupeId: "D003",
+      hotelId: "H003",
+      latitude: 40.748817,
+      longitude: -73.985428,
+      name: "Empire Suites",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT1H20M",
-        segments: [
-          {
-            id: "SEG_004",
-            number: "210",
-            carrierCode: "B6",
-            duration: "PT1H20M",
-            numberOfStops: 0,
-            blacklistedInEU: false,
-            aircraft: { code: "E90" },
-            departure: {
-              iataCode: "BOS",
-              terminal: "C",
-              at: "2026-03-04T14:00:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "15" },
+        guests: { adults: 2 },
+        id: "O003",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Free cancellation within 48 hours" },
+              type: "FREE_CANCELLATION",
             },
-            arrival: {
-              iataCode: "JFK",
-              terminal: "5",
-              at: "2026-03-04T15:20:00",
+          ],
+        },
+        paymentType: "Prepaid",
+        price: {
+          base: "300.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "30.00", currency: "USD", included: true }],
+          total: "330.00",
+        },
+        rateCode: "RC03",
+        rateFamilyEstimated: { code: "EST03", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Luxury suite with city skyline view" },
+          type: "SUITE",
+          typeEstimated: { bedType: "KING", beds: 1, category: "DELUXE" },
+        },
+        self: "/offers/O003",
+        variations: {
+          average: { base: "300.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "150.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "180.00" },
+          ],
+        },
+      },
+    ],
+  },
+  // 6 more hotels for 9 total
+  {
+    available: true,
+    hotel: {
+      chainCode: "HC04",
+      cityCode: "NYC",
+      dupeId: "D004",
+      hotelId: "H004",
+      latitude: 40.761581,
+      longitude: -73.977708,
+      name: "Central Park Hotel",
+      type: "HOTEL",
+    },
+    offers: [
+      {
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "8" },
+        guests: { adults: 2 },
+        id: "O004",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Free cancellation up to 24 hours before check-in" },
+              type: "FREE_CANCELLATION",
             },
-            operating: { carrierCode: "B6" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Pay at hotel",
+        price: {
+          base: "180.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "18.00", currency: "USD", included: true }],
+          total: "198.00",
+        },
+        rateCode: "RC04",
+        rateFamilyEstimated: { code: "EST04", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Standard room with park view" },
+          type: "DOUBLE",
+          typeEstimated: { bedType: "DOUBLE", beds: 1, category: "STANDARD" },
+        },
+        self: "/offers/O004",
+        variations: {
+          average: { base: "180.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "90.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "108.00" },
+          ],
+        },
       },
     ],
   },
   {
-    id: "TICKET_005",
-    instantTicketingRequired: true,
-    isUpsellOffer: true,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC05",
+      cityCode: "NYC",
+      dupeId: "D005",
+      hotelId: "H005",
+      latitude: 40.706192,
+      longitude: -74.00916,
+      name: "Brooklyn Bridge Hotel",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT9H10M",
-        segments: [
-          {
-            id: "SEG_005",
-            number: "778",
-            carrierCode: "AA",
-            duration: "PT9H10M",
-            numberOfStops: 1,
-            blacklistedInEU: false,
-            aircraft: { code: "789" },
-            departure: {
-              iataCode: "SEA",
-              terminal: "N",
-              at: "2026-03-05T06:45:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "10" },
+        guests: { adults: 2 },
+        id: "O005",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Non-refundable" },
+              type: "NON_REFUNDABLE",
             },
-            arrival: {
-              iataCode: "MIA",
-              terminal: "D",
-              at: "2026-03-05T15:55:00",
-            },
-            operating: { carrierCode: "AA" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Prepaid",
+        price: {
+          base: "220.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "22.00", currency: "USD", included: true }],
+          total: "242.00",
+        },
+        rateCode: "RC05",
+        rateFamilyEstimated: { code: "EST05", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Deluxe double room with city view" },
+          type: "DOUBLE",
+          typeEstimated: { bedType: "KING", beds: 1, category: "DELUXE" },
+        },
+        self: "/offers/O005",
+        variations: {
+          average: { base: "220.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "110.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "132.00" },
+          ],
+        },
       },
     ],
   },
   {
-    id: "TICKET_006",
-    instantTicketingRequired: false,
-    isUpsellOffer: false,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC06",
+      cityCode: "NYC",
+      dupeId: "D006",
+      hotelId: "H006",
+      latitude: 40.748441,
+      longitude: -73.985664,
+      name: "Times Square Suites",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT3H50M",
-        segments: [
-          {
-            id: "SEG_006",
-            number: "332",
-            carrierCode: "AA",
-            duration: "PT3H50M",
-            numberOfStops: 0,
-            blacklistedInEU: false,
-            aircraft: { code: "321" },
-            departure: {
-              iataCode: "DFW",
-              terminal: "C",
-              at: "2026-03-06T11:10:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "12" },
+        guests: { adults: 2 },
+        id: "O006",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Free cancellation within 24 hours" },
+              type: "FREE_CANCELLATION",
             },
-            arrival: {
-              iataCode: "LGA",
-              terminal: "B",
-              at: "2026-03-06T15:00:00",
-            },
-            operating: { carrierCode: "AA" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Pay at hotel",
+        price: {
+          base: "260.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "26.00", currency: "USD", included: true }],
+          total: "286.00",
+        },
+        rateCode: "RC06",
+        rateFamilyEstimated: { code: "EST06", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Suite with city skyline view" },
+          type: "SUITE",
+          typeEstimated: { bedType: "KING", beds: 1, category: "DELUXE" },
+        },
+        self: "/offers/O006",
+        variations: {
+          average: { base: "260.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "130.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "156.00" },
+          ],
+        },
       },
     ],
   },
   {
-    id: "TICKET_007",
-    instantTicketingRequired: true,
-    isUpsellOffer: false,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC07",
+      cityCode: "NYC",
+      dupeId: "D007",
+      hotelId: "H007",
+      latitude: 40.752726,
+      longitude: -73.977229,
+      name: "Madison Hotel",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT4H30M",
-        segments: [
-          {
-            id: "SEG_007",
-            number: "640",
-            carrierCode: "DL",
-            duration: "PT4H30M",
-            numberOfStops: 0,
-            blacklistedInEU: false,
-            aircraft: { code: "739" },
-            departure: {
-              iataCode: "ATL",
-              terminal: "S",
-              at: "2026-03-07T13:00:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "9" },
+        guests: { adults: 2 },
+        id: "O007",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Non-refundable" },
+              type: "NON_REFUNDABLE",
             },
-            arrival: {
-              iataCode: "PHX",
-              terminal: "3",
-              at: "2026-03-07T17:30:00",
-            },
-            operating: { carrierCode: "DL" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Prepaid",
+        price: {
+          base: "240.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "24.00", currency: "USD", included: true }],
+          total: "264.00",
+        },
+        rateCode: "RC07",
+        rateFamilyEstimated: { code: "EST07", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Standard double room with city view" },
+          type: "DOUBLE",
+          typeEstimated: { bedType: "DOUBLE", beds: 1, category: "STANDARD" },
+        },
+        self: "/offers/O007",
+        variations: {
+          average: { base: "240.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "120.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "144.00" },
+          ],
+        },
       },
     ],
   },
   {
-    id: "TICKET_008",
-    instantTicketingRequired: false,
-    isUpsellOffer: true,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC08",
+      cityCode: "NYC",
+      dupeId: "D008",
+      hotelId: "H008",
+      latitude: 40.730824,
+      longitude: -73.99733,
+      name: "Soho Boutique Hotel",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT6H00M",
-        segments: [
-          {
-            id: "SEG_008",
-            number: "521",
-            carrierCode: "WN",
-            duration: "PT6H00M",
-            numberOfStops: 0,
-            blacklistedInEU: false,
-            aircraft: { code: "73H" },
-            departure: {
-              iataCode: "ORD",
-              terminal: "5",
-              at: "2026-03-08T10:00:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "11" },
+        guests: { adults: 2 },
+        id: "O008",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Free cancellation up to 24 hours before check-in" },
+              type: "FREE_CANCELLATION",
             },
-            arrival: {
-              iataCode: "LAS",
-              terminal: "1",
-              at: "2026-03-08T13:00:00",
-            },
-            operating: { carrierCode: "WN" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Prepaid",
+        price: {
+          base: "270.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "27.00", currency: "USD", included: true }],
+          total: "297.00",
+        },
+        rateCode: "RC08",
+        rateFamilyEstimated: { code: "EST08", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Boutique room with modern design" },
+          type: "DOUBLE",
+          typeEstimated: { bedType: "DOUBLE", beds: 1, category: "DELUXE" },
+        },
+        self: "/offers/O008",
+        variations: {
+          average: { base: "270.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "135.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "162.00" },
+          ],
+        },
       },
     ],
   },
   {
-    id: "TICKET_009",
-    instantTicketingRequired: true,
-    isUpsellOffer: false,
-    itineraries: [
+    available: true,
+    hotel: {
+      chainCode: "HC09",
+      cityCode: "NYC",
+      dupeId: "D009",
+      hotelId: "H009",
+      latitude: 40.741895,
+      longitude: -73.989308,
+      name: "Chelsea Comfort Hotel",
+      type: "HOTEL",
+    },
+    offers: [
       {
-        duration: "PT2H10M",
-        segments: [
-          {
-            id: "SEG_009",
-            number: "903",
-            carrierCode: "DL",
-            duration: "PT2H10M",
-            numberOfStops: 0,
-            blacklistedInEU: false,
-            aircraft: { code: "220" },
-            departure: {
-              iataCode: "MCO",
-              terminal: "B",
-              at: "2026-03-09T16:40:00",
+        checkInDate: "2026-01-10",
+        checkOutDate: "2026-01-12",
+        commission: { percentage: "13" },
+        guests: { adults: 2 },
+        id: "O009",
+        policies: {
+          cancellations: [
+            {
+              description: { text: "Non-refundable" },
+              type: "NON_REFUNDABLE",
             },
-            arrival: {
-              iataCode: "ATL",
-              terminal: "S",
-              at: "2026-03-09T18:50:00",
-            },
-            operating: { carrierCode: "DL" },
-          },
-        ],
+          ],
+        },
+        paymentType: "Pay at hotel",
+        price: {
+          base: "190.00",
+          currency: "USD",
+          taxes: [{ code: "TAX1", amount: "19.00", currency: "USD", included: true }],
+          total: "209.00",
+        },
+        rateCode: "RC09",
+        rateFamilyEstimated: { code: "EST09", type: "STANDARD" },
+        room: {
+          description: { lang: "en", text: "Comfortable room with city view" },
+          type: "DOUBLE",
+          typeEstimated: { bedType: "DOUBLE", beds: 1, category: "STANDARD" },
+        },
+        self: "/offers/O009",
+        variations: {
+          average: { base: "190.00" },
+          changes: [
+            { startDate: "2026-01-10", endDate: "2026-01-11", total: "95.00" },
+            { startDate: "2026-01-11", endDate: "2026-01-12", total: "114.00" },
+          ],
+        },
       },
     ],
   },
@@ -318,4 +533,5 @@ export {
   simpleRequestMessages,
   darkPurpleColor,
   lightBlueColor,
+  mockHotels,
 };

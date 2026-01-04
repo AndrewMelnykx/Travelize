@@ -28,7 +28,7 @@ const HotelCards: React.FC = () => {
       <HotelFilter city={city} handleCityChange={handleCityChange} />
 
       <ToastContainer />
-      <Box display={"flex"} alignSelf={"flex-start"} mt={"10%"} sx={{ background: "black" }}>
+      <Box display={"flex"} alignSelf={"flex-start"} mt={"8%"} sx={{ background: "black" }}>
         <Box display={"grid"} gridTemplateColumns={"repeat(3,1fr)"} rowGap={2} columnGap={2}>
           {hotelsDataState.map(hotel => (
             <CardTemplate hotel={hotel} key={hotel.hotel.hotelId} />
