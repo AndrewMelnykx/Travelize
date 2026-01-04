@@ -1,5 +1,6 @@
 import React from "react";
-import { Paper, Box, FormControl, InputLabel, Typography } from "@mui/material";
+import { Paper, Box, FormControl, InputLabel, Typography, Button } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import CustomInput from "@custom-ui/Input";
 import CustomSelect from "@custom-ui/select";
 import LoadingButtonsTransition from "@custom-ui/button";
@@ -8,52 +9,59 @@ import { darkPurpleColor } from "@helpers/constants";
 const HotelFilter = ({
   city,
   handleCityChange,
+  handleFilterVisibility,
 }: {
   city: string;
   handleCityChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleFilterVisibility?: () => void;
 }) => {
   return (
     <Box
       sx={{
-        height: "100vh",
-        width: "100vw",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        ml: { xs: 4, md: 0 },
+        width: "100%",
+        height: "100%",
+        p: 2,
+        transition: "all 0.3s ease",
       }}
     >
       <Paper
         sx={{
-          height: {
-            xs: "40%",
-            sm: "90%",
-            md: "50%",
-          },
-          width: {
-            xs: "90%",
-            sm: "90%",
-            md: "30%",
-          },
-          background: `${darkPurpleColor}`,
+          width: "100%",
+          height: "100%",
+          background: darkPurpleColor,
           boxShadow: "1px 1px 1px 1px black",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           flexDirection: "column",
+          alignItems: "center",
           borderRadius: "2rem",
+          p: 2,
         }}
       >
-        <Typography variant="h4" color={"white"} mb={1}>
-          Search params :
-        </Typography>
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          width={"60%"}
-        >
+        <Box display={"flex"}>
+          <Typography variant="h5" color="white" mb={1}>
+            Search params :
+          </Typography>
+          <Button
+            onClick={handleFilterVisibility}
+            sx={{
+              width: "2rem",
+              height: "2rem",
+              color: "white",
+              minWidth: 0,
+              padding: 0,
+              "&:hover": {
+                backgroundColor: "transparent",
+                color: "gold",
+              },
+              ml: 6,
+              mt: 0.5,
+            }}
+          >
+            <CloseIcon sx={{ position: "absolute", right: 0, top: 0 }} />
+          </Button>
+        </Box>
+
+        <Box width="100%">
           <CustomInput
             id="city-input"
             type="string"
@@ -62,20 +70,15 @@ const HotelFilter = ({
             onChange={handleCityChange}
             label="City"
           />
-          <FormControl
-            variant="standard"
-            sx={{
-              width: "100%",
-              marginTop: "10%",
-            }}
-          >
-            <InputLabel id="filter-select">
-              <i> Adults:</i>
+
+          <FormControl variant="standard" sx={{ width: "100%", mt: 2 }}>
+            <InputLabel>
+              <i>Adults</i>
             </InputLabel>
-            <CustomSelect label={"Guests"} labelId={"label-guests-id"} />
+            <CustomSelect label="Guests" labelId={"label-guests-id"} />
           </FormControl>
-          <LoadingButtonsTransition city={city} />
         </Box>
+        <LoadingButtonsTransition city={city} />
       </Paper>
     </Box>
   );

@@ -24,6 +24,7 @@ const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
   return (
     <Paper
       sx={{
+        width: "75%",
         boxShadow: "5px 5px 5px 5px black",
         borderRadius: "2rem",
         p: "6% 0 0.3rem 0",
