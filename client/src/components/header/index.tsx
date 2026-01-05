@@ -8,7 +8,7 @@ import { isCloseIconSelector } from "@store/selectors/components-selectors";
 import FilterSlice from "@store/slices/filter-slice";
 import AuthorizationSlice from "@store/slices/authorization-slice";
 
-import { Paper, Box, Typography, SvgIcon, IconButton, useMediaQuery } from "@mui/material";
+import { Paper, Box, Typography, SvgIcon, IconButton, useMediaQuery, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { NavBar } from "@custom-ui/nav-bar";
@@ -61,6 +61,12 @@ const Header = () => {
       initialInputs.map(input => (input.id === id ? { ...input, value: value } : input)),
     );
   };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <Box height={"100px"} position={"fixed"} width={"100%"} zIndex={10}>
@@ -71,10 +77,25 @@ const Header = () => {
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
         }}
       >
-        <Typography variant="h3" ml={3} mt={1} className="header-typography" fontFamily={"inherit"}>
+        <Button
+          disableRipple
+          disableElevation
+          sx={{
+            all: "unset",
+            cursor: "pointer",
+            fontFamily: "inherit",
+            fontSize: "3rem",
+            ml: 3,
+            mt: 1,
+            color: "inherit",
+            "&:hover": {
+              background: "transparent",
+            },
+          }}
+          onClick={scrollToTop}
+        >
           Travelize
-        </Typography>
-
+        </Button>
         {isScreenSmall ? (
           <IconButton
             onClick={handleIsCloseVisibility}

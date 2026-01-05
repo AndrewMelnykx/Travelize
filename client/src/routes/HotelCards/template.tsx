@@ -1,15 +1,6 @@
 import React from "react";
 
-import {
-  Card,
-  CardMedia,
-  Paper,
-  Box,
-  CardContent,
-  Typography,
-  useMediaQuery,
-  Button,
-} from "@mui/material";
+import { Card, CardMedia, Paper, Box, CardContent, Typography, Button } from "@mui/material";
 import { HotelDataItem } from "@store/types";
 import HotelImageSample from "@assets/images/cards-images/hotel-image.avif";
 import { darkPurpleColor } from "@helpers/constants";
