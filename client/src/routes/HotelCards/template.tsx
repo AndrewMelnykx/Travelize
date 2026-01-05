@@ -15,8 +15,6 @@ import HotelImageSample from "@assets/images/cards-images/hotel-image.avif";
 import { darkPurpleColor } from "@helpers/constants";
 
 const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
-  const isScreenSmall = useMediaQuery("(max-width:600px)");
-
   const hotelPrices = hotel.offers.map(hotelItem => hotelItem.price.total);
   const currency = hotel.offers.map(hotelItem => hotelItem.price.currency);
   const beds = hotel.offers.map(hotelItem => hotelItem.room.typeEstimated.beds);
@@ -24,19 +22,23 @@ const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
   return (
     <Paper
       sx={{
-        width: "75%",
+        width: { xs: "60%", md: "80%" },
         boxShadow: "5px 5px 5px 5px black",
         borderRadius: "2rem",
-        p: "6% 0 0.3rem 0",
+        p: "6% 0 0 0",
         background: `${darkPurpleColor}`,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Card
         sx={{
-          width: { sx: "50px", md: "280px" },
+          width: { xs: "240px", md: "280px" },
           color: "white",
           background: "transparent",
-          height: { sx: "50px", md: "280px" },
+          height: { xs: "340px", md: "280px" },
         }}
       >
         <Box
@@ -44,7 +46,7 @@ const CardTemplate: React.FC<{ hotel: HotelDataItem }> = ({ hotel }) => {
           flexDirection="column"
           alignItems="center"
           justifyContent="center"
-          mb={1}
+          mb={0.2}
         >
           <Typography
             sx={{
