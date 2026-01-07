@@ -4,7 +4,8 @@
  
  ![Home Page](https://github.com/user-attachments/assets/6817f414-f30c-4575-af24-55e0acea5fa3)
 ![Activities](https://github.com/user-attachments/assets/c531c622-7a8a-499b-8aad-40f64199c1f4)
-![Tickets](https://github.com/user-attachments/assets/bc9e2efb-ab8d-4061-bf51-adc07a19ba02)
+<img width="1812" height="905" alt="Screenshot 2026-01-01 174633" src="https://github.com/user-attachments/assets/87c6021a-03d2-4a38-b98b-3c22a6ca37e6" />
+
 
  It offers a smooth and responsive user experience, enhanced by React Spring animations and Toastify notifications. The app's seamless navigation is powered by React-Router-DOM, while the backend, developed with Node.js and Express.js, ensures fast and reliable performance. Trevelize is designed to make travel planning effortless and enjoyable, providing users with an intuitive interface and real-time updates for a truly immersive experience.
 
